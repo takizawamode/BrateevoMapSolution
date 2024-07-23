@@ -1,0 +1,2823 @@
+html { /* Параметры масшстаба сайта и поддержки Вебкит-браузеров */
+    zoom: 1; 
+    -webkit-text-size-adjust: none;
+    -ms-webkit-text-size-adjust: none;
+}
+
+#logo-container { /* Предзагрузочное изображение с временем действия */
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: white;
+    z-index: 999999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 2.2s;
+  }
+
+  @media screen and (max-width: 736px) { /* Правила для устройств с шириной не более 736px */
+    #logo1 { /* Не показывать заголовок названия проекта */
+        display: none; 
+    }
+    
+        .hide-sidebar-btn { /* Кнопка закрытия */
+        position: absolute;
+        top: 0px; 
+        left: 0px; 
+        z-index: 999999;
+        outline: none;
+        background-color: #c90000;
+        border: none;
+        border-radius: 0px 15px;
+        padding: 5px;
+        cursor: pointer;
+        width: 48px;
+        height: 30px;
+    }
+    
+    .carousel-container { /* Кнопки категорий */
+    width: 100%;
+    height: 65%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    touch-action: manipulation;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  #icons-container { /* Логотипы партнеров */
+    width: 100%; 
+    height: 22%;
+    bottom: 0;
+    display: flex;
+    flex-direction: row; 
+    margin-bottom: 5%;
+    }
+    
+    .carousel-item { /* Размеры кнопок категорий */
+      width: 90px; 
+      height: 90px;
+      text-align: center;
+      margin: 10px 0px 10px 14px; 
+    }
+}
+
+@media screen and (min-width: 737px) { /* Правила для устройств с шириной более 737px */
+    #logo1 { /* Закрепить изображение с заголовком проекта */
+        display: block; 
+    }
+    .carousel-container { 
+    width: 100%;
+    height: 70%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    touch-action: manipulation;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+  }
+  
+  #icons-container {
+    width: 100%; 
+    height: 23%;
+    bottom: 0;
+    display: flex;
+    flex-direction: row; 
+    margin-bottom: 5%;
+    }
+    
+    .carousel-item {
+  width: 85px; 
+  height: 98px;
+  text-align: center;
+  margin: 10px 0px 10px 14px; 
+    }
+}
+
+@media screen and (max-width: 736px) {
+    .scroll-button,
+    .scroll-button2 {
+        display: none; /* Скрыть кнопки прокрутки панелей категорий */
+    }
+}
+
+/* Стили для предзагрузочного изображения */
+#logo-container {
+    opacity: 1; 
+    transition: opacity 2.2s ease-in-out; 
+}
+
+#logo-container.fade-out {
+    opacity: 0;
+}
+
+#logo-container2 {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: white;
+    z-index: 999999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 2.2s;
+  } 
+
+#logo-container2 {
+    opacity: 1; 
+    transition: opacity 2.2s ease-in-out; 
+}
+
+#logo-container2.fade-out {
+    opacity: 0;
+}
+
+#logo-container img,
+#logo-container2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+}
+
+img {
+    user-select: none;
+}
+
+.hardware-accelerate {
+  transform: translateZ(0);
+}
+
+#outer-container { /* Контейнер для контейнера с картой:) */
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+#map-container { /* Контейнер карты */
+    overflow: hidden;
+    width: 1920px; 
+    height: 1080px; 
+    position: absolute;
+}
+
+#map-container img { /* Изображение карты */
+    width: 1920px ; 
+    height: 1080px;
+}
+
+    #mar-marker-button28 { /* Метка на карте с ее категорией и порядковым номером */
+        position: absolute;
+        top: 494px; /* Положение метки сверху вниз */
+        left: 837px; /* Положение метки слева на право */
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp); /* Изображение метки */
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    /* Далее по аналогии */
+    #mar-marker-button29 {
+        position: absolute;
+        top: 387px;
+        left: 1143px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #ser-marker-button37 {
+        position: absolute;
+        top: 618px;
+        left: 974px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #ser-marker-button36 {
+        position: absolute;
+        top: 394px;
+        left: 994px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #ser-marker-button34 {
+        position: absolute;
+        top: 405px;
+        left: 1042px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #ser-marker-button33 {
+        position: absolute;
+        top: 402px;
+        left: 1154px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #ser-marker-button32 {
+        position: absolute;
+        top: 411px;
+        left: 858px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #ser-marker-button31 {
+        position: absolute;
+        top: 485px;
+        left: 888px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #ser-marker-button28 {
+        position: absolute;
+        top: 339px;
+        left: 1249px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #ser-marker-button27 {
+        position: absolute;
+        top: 476px;
+        left: 1008px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #ser-marker-button26 {
+        position: absolute;
+        top: 631px;
+        left: 972px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #ser-marker-button24 {
+        position: absolute;
+        top: 376px;
+        left: 1137px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #ser-marker-button23 {
+        position: absolute;
+        top: 354px;
+        left: 1121px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #ser-marker-button21 {
+        position: absolute;
+        top: 288px;
+        left: 1119px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #ser-marker-button20 {
+        position: absolute;
+        top: 339px;
+        left: 1095px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #ser-marker-button19 {
+        position: absolute;
+        top: 316px;
+        left: 1077px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #ser-marker-button14 {
+        position: absolute;
+        top: 348px;
+        left: 1285px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #ser-marker-button11 {
+        position: absolute;
+        top: 370px;
+        left: 1065px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #ser-marker-button4 {
+        position: absolute;
+        top: 4000px;
+        left: 4000px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #ser-marker-button1 {
+        position: absolute;
+        top: 154px;
+        left: -33px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #ent-marker-button8 {
+        position: absolute;
+        top: 514px;
+        left: 1129px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #ent-marker-button7 {
+        position: absolute;
+        top: 425px;
+        left: 1059px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #ent-marker-button6 {
+        position: absolute;
+        top: 476px;
+        left: 1193px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #ent-marker-button5 {
+        position: absolute;
+        top: 465px;
+        left: 1003px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #ent-marker-button4 {
+        position: absolute;
+        top: 336px;
+        left: 1040px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #ent-marker-button3 {
+        position: absolute;
+        top: 350px;
+        left: 1280px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #ent-marker-button2 {
+        position: absolute;
+        top: 467px;
+        left: 859px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+
+    #tra-marker-button3 {
+        position: fixed;
+        top: 765px;
+        left: 1417px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #tra-marker-button2 {
+        position: absolute;
+        top: 470px;
+        left: 1174px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #tra-marker-button1 {
+        position: absolute;
+        top: 501px;
+        left: 871px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #par-marker-button6 {
+        position: absolute;
+        top: 430px;
+        left: 841px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #par-marker-button5 {
+        position: absolute;
+        top: 361px;
+        left: 1060px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #par-marker-button4 {
+        position: absolute;
+        top: 333px; 
+        left: 1375px; 
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #par-marker-button3 {
+        position: absolute;
+        top: 585px; 
+        left: 1100px; 
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #par-marker-button2 {
+        position: absolute;
+        top: 354px; 
+        left: 700px; 
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #par-marker-button1 {
+        position: absolute;
+        top: 490px; 
+        left: 1159px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #res-marker-button5 {
+        position: absolute;
+        top: 683px;
+        left: 1118px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #res-marker-button3 {
+        position: absolute;
+        top: 340px;
+        left: 1090px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #res-marker-button1 {
+        position: absolute;
+        top: 432px;
+        left: 779px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #edu-marker-button11 {
+        position: absolute;
+        top: 413px;
+        left: 578px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #edu-marker-button10 {
+        position: absolute;
+        top: 431px;
+        left: 878px; 
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #edu-marker-button9 {
+        position: absolute;
+        top: 325px; 
+        left: 1294px; 
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #edu-marker-button8 {
+        position: absolute;
+        top: 427px;
+        left: 1210px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #edu-marker-button7 {
+        position: absolute;
+        top: 493px;
+        left: 1059px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #edu-marker-button6 {
+        position: absolute;
+        top: 525px;
+        left: 1091px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #edu-marker-button5 {
+        position: absolute;
+        top: 313px;
+        left: 1205px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #edu-marker-button4 {
+        position: absolute;
+        top: 329px; 
+        left: 1157px; 
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #edu-marker-button3 {
+        position: absolute;
+        top: 446px;
+        left: 855px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #edu-marker-button2 {
+        position: absolute;
+        top: 397px;
+        left: 1020px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #edu-marker-button1 {
+        position: absolute;
+        top: 387px; 
+        left: 1042px; 
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+
+    #mar-marker-button27 {
+        position: absolute;
+        top: 255px;
+        left: 1226px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #mar-marker-button26 {
+        position: absolute;
+        top: 421px;
+        left: 1156px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #mar-marker-button24 {
+        position: absolute;
+        top: 359px;
+        left: 1127px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #mar-marker-button23 {
+        position: absolute;
+        top: 316px;
+        left: 1259px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #mar-marker-button22 {
+        position: absolute;
+        top: 392px;
+        left: 1222px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #mar-marker-button21 {
+        position: absolute;
+        top: 342px;
+        left: 1249px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #mar-marker-button20 {
+        position: absolute;
+        top: 677px;
+        left: 1117px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #mar-marker-button18 {
+        position: absolute;
+        top: 285px;
+        left: 1180px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #mar-marker-button17 {
+        position: absolute;
+        top: 341px;
+        left: 1089px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #mar-marker-button16 {
+        position: absolute;
+        top: 315px;
+        left: 1075px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #mar-marker-button14 {
+        position: absolute;
+        top: 505px;
+        left: 1211px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #mar-marker-button13 {
+        position: absolute;
+        top: 400px;
+        left: 1086px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #mar-marker-button12 {
+        position: absolute;
+        top: 371px;
+        left: 1066px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #mar-marker-button9 {
+        position: absolute;
+        top: 456px;
+        left: 1025px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #mar-marker-button8 {
+        position: absolute;
+        top: 412px;
+        left: 996px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #mar-marker-button7 {
+        position: absolute;
+        top: 450px;
+        left: 1181px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #mar-marker-button5 {
+        position: absolute;
+        top: 414px;
+        left: 838px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #mar-marker-button4 {
+        position: absolute;
+        top: 431px;
+        left: 779px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #mar-marker-button3 {
+        position: absolute;
+        top: 484px;
+        left: 886px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #mar-marker-button2 {
+        position: absolute;
+        top: 490px;
+        left: 922px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #mar-marker-button1 {
+        position: absolute;
+        top: 410px;
+        left: 861px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #med-marker-button17 {
+        position: absolute;
+        top: 481px;
+        left: 782px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #med-marker-button16 {
+        position: absolute;
+        top: 485px;
+        left: 992px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #med-marker-button15 {
+        position: absolute;
+        top: 486px;
+        left: 888px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #med-marker-button14 {
+        position: absolute;
+        top: 388px;
+        left: 1143px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #med-marker-button13 {
+        position: absolute;
+        top: 314px;
+        left: 1077px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #med-marker-button12 {
+        position: absolute;
+        top: 495px;
+        left: 1106px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #med-marker-button11 {
+        position: absolute;
+        top: 471px;
+        left: 1113px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #med-marker-button10 {
+        position: absolute;
+        top: 343px; 
+        left: 1094px; 
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #med-marker-button9 {
+        position: absolute;
+        top: 399px;
+        left: 1085px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #med-marker-button8 {
+        position: absolute;
+        top: 491px;
+        left: 922px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #med-marker-button7 {
+        position: absolute;
+        top: 920px;
+        left: 930px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #med-marker-button6 {
+        position: absolute;
+        top: 286px;
+        left: 1223px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #med-marker-button5 {
+        position: absolute;
+        top: 451px; 
+        left: 835px; 
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #med-marker-button3 {
+        position: absolute;
+        top: 259px;
+        left: 1267px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #med-marker-button2 {
+        position: absolute;
+        top: 467px;
+        left: 859px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #med-marker-button1 {
+        position: absolute;
+        top: 374px; 
+        left: 211px; 
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+
+    #adm-marker-button12 {
+        position: absolute;
+        top: 226.48px;
+        left: 1236.47px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #adm-marker-button11 {
+        position: absolute;
+        top: 524.84px;
+        left: 1133.69px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #adm-marker-button9 {
+        position: absolute;
+        top: 411.16px;
+        left: 1088.65px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #pro-marker-button8 {
+        position: absolute;
+        top: 301.96px;
+        left: 1161.9px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #pro-marker-button7 {
+        position: absolute;
+        top: 347.84px; 
+        left: 1007.26px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #adm-marker-button5 {
+        position: absolute;
+        top: 479.32px;
+        left: 799.36px; 
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #adm-marker-button2 {
+        position: absolute;
+        top: 408.12px;
+        left: 995.27px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #adm-marker-button1 {
+        position: absolute;
+        top: 352.72px;
+        left: 1193.48px;
+        width: 30px;
+        height: 30px;
+        background-image: url(marker.webp);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+    /* Конец меток */
+
+@media screen and (max-width: 736px) {
+    body { /* Фон сайта */
+    width: 100vw; 
+    height: 100vh; 
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-y: hidden;
+    background-color: gainsboro;
+    }
+
+    #sidebar { /* Главная боковая панель */
+        display: none;
+       position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw; 
+        min-width: 100vw;
+        min-height: 100vh;
+        height: 120vh; 
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        transition: left 2.5s ease;
+        border-radius: 0; 
+        z-index: 9998;
+    }
+
+    #sidebar.active {
+        display: none;
+       position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw; 
+        min-width: 100vw;
+        min-height: 100vh;
+        height: 100vh; 
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        transition: left 2.5s ease;
+        border-radius: 0; 
+        z-index: 9998;
+  }
+
+  #close-button {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 45px;
+    height: 45px;
+    font-size: 24px; 
+    background-color: transparent;
+    border: none; 
+    cursor: pointer; 
+    }
+}
+
+@media screen and (min-width: 736px) {
+
+    body {
+    width: 100vw; 
+    height: 100vh; 
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: gainsboro;
+    }
+
+    #close-button {
+        display: none;
+    }
+
+    #sidebar {
+      z-index: 9998;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 28vw;
+      text-align: center;
+      min-width: 200px;
+      max-width: 400px;
+      height: 100%;
+      background-color: rgb(255, 255, 255);
+      padding: 10px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      transition: left 2.5s ease;
+      border-radius: 0 20px 20px 0;
+      overflow: hidden; 
+      }
+      
+      #sidebar.active {
+        left: 0;
+
+  }
+}
+
+#open-container { /* Контейнер и кнопка открытия главной боковой  панели */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9995; 
+}
+
+#open-button {
+    width: 90px;
+    height: 90px;
+    font-size: 36px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    opacity: 1; 
+    transition: opacity 0.3s ease; 
+}
+
+/* Скрытие полосы прокрутки для Вебкит-браузеров */
+  #service-sidebar36::-webkit-scrollbar,
+  #service-sidebar34::-webkit-scrollbar,
+  #service-sidebar33::-webkit-scrollbar,
+  #service-sidebar32::-webkit-scrollbar,
+  #service-sidebar31::-webkit-scrollbar,
+  #service-sidebar28::-webkit-scrollbar,
+  #service-sidebar27::-webkit-scrollbar,
+  #service-sidebar24::-webkit-scrollbar,
+  #service-sidebar23::-webkit-scrollbar,
+  #service-sidebar21::-webkit-scrollbar,
+  #service-sidebar20::-webkit-scrollbar,
+  #service-sidebar19::-webkit-scrollbar,
+  #service-sidebar14::-webkit-scrollbar,
+  #service-sidebar11::-webkit-scrollbar,
+  #service-sidebar4::-webkit-scrollbar,
+  #service-sidebar1::-webkit-scrollbar,
+  #entertainment-sidebar8::-webkit-scrollbar,
+  #entertainment-sidebar7::-webkit-scrollbar,
+  #entertainment-sidebar6::-webkit-scrollbar,
+  #entertainment-sidebar5::-webkit-scrollbar,
+  #entertainment-sidebar4::-webkit-scrollbar,
+  #entertainment-sidebar3::-webkit-scrollbar,
+  #entertainment-sidebar2::-webkit-scrollbar,
+  #transport-sidebar3::-webkit-scrollbar,
+  #transport-sidebar2::-webkit-scrollbar,
+  #transport-sidebar1::-webkit-scrollbar,
+  #park-sidebar6::-webkit-scrollbar,
+  #park-sidebar5::-webkit-scrollbar,
+  #park-sidebar4::-webkit-scrollbar,
+  #park-sidebar3::-webkit-scrollbar,
+  #park-sidebar2::-webkit-scrollbar,
+  #park-sidebar1::-webkit-scrollbar,
+  #restaurant-sidebar5::-webkit-scrollbar,
+  #restaurant-sidebar3::-webkit-scrollbar,
+  #restaurant-sidebar1::-webkit-scrollbar,
+  #education-sidebar11::-webkit-scrollbar,
+  #education-sidebar10::-webkit-scrollbar,
+  #education-sidebar9::-webkit-scrollbar,
+  #education-sidebar8::-webkit-scrollbar,
+  #education-sidebar7::-webkit-scrollbar,
+  #education-sidebar6::-webkit-scrollbar,
+  #education-sidebar5::-webkit-scrollbar,
+  #education-sidebar4::-webkit-scrollbar,
+  #education-sidebar3::-webkit-scrollbar,
+  #education-sidebar2::-webkit-scrollbar,
+  #education-sidebar1::-webkit-scrollbar,
+  #market-sidebar29::-webkit-scrollbar,
+  #market-sidebar28::-webkit-scrollbar,
+  #market-sidebar27::-webkit-scrollbar,
+  #market-sidebar26::-webkit-scrollbar,
+  #market-sidebar24::-webkit-scrollbar,
+  #market-sidebar23::-webkit-scrollbar,
+  #market-sidebar22::-webkit-scrollbar,
+  #market-sidebar21::-webkit-scrollbar,
+  #market-sidebar20::-webkit-scrollbar,
+  #market-sidebar18::-webkit-scrollbar,
+  #market-sidebar17::-webkit-scrollbar,
+  #market-sidebar16::-webkit-scrollbar,
+  #market-sidebar14::-webkit-scrollbar,
+  #market-sidebar13::-webkit-scrollbar,
+  #market-sidebar12::-webkit-scrollbar,
+  #market-sidebar9::-webkit-scrollbar,
+  #market-sidebar8::-webkit-scrollbar,
+  #market-sidebar7::-webkit-scrollbar,
+  #market-sidebar5::-webkit-scrollbar,
+  #market-sidebar4::-webkit-scrollbar,
+  #market-sidebar3::-webkit-scrollbar,
+  #market-sidebar2::-webkit-scrollbar,
+  #market-sidebar1::-webkit-scrollbar,
+  #medicine-sidebar17::-webkit-scrollbar,
+  #medicine-sidebar16::-webkit-scrollbar,
+  #medicine-sidebar15::-webkit-scrollbar,
+  #medicine-sidebar14::-webkit-scrollbar,
+  #medicine-sidebar13::-webkit-scrollbar,
+  #medicine-sidebar12::-webkit-scrollbar,
+  #medicine-sidebar11::-webkit-scrollbar,
+  #medicine-sidebar10::-webkit-scrollbar,
+  #medicine-sidebar9::-webkit-scrollbar,
+  #medicine-sidebar8::-webkit-scrollbar,
+  #medicine-sidebar7::-webkit-scrollbar,
+  #medicine-sidebar6::-webkit-scrollbar,
+  #medicine-sidebar5::-webkit-scrollbar,
+  #medicine-sidebar3::-webkit-scrollbar,
+  #medicine-sidebar2::-webkit-scrollbar,
+  #medicine-sidebar1::-webkit-scrollbar,
+  #admin-sidebar12::-webkit-scrollbar,
+  #admin-sidebar11::-webkit-scrollbar,
+  #admin-sidebar9::-webkit-scrollbar,
+  #prom-sidebar8::-webkit-scrollbar,
+  #prom-sidebar7::-webkit-scrollbar,
+  #admin-sidebar5::-webkit-scrollbar,
+  #admin-sidebar2::-webkit-scrollbar,
+  #admin-sidebar1::-webkit-scrollbar {
+    display: none; 
+}
+
+@media (max-width: 736px) {
+/* Стили панели категорий */
+  #service-sidebar36,
+  #service-sidebar34,
+  #service-sidebar33,
+  #service-sidebar32,
+  #service-sidebar31,
+  #service-sidebar28,
+  #service-sidebar27,
+  #service-sidebar24,
+  #service-sidebar23,
+  #service-sidebar21,
+  #service-sidebar20,
+  #service-sidebar19,
+  #service-sidebar14,
+  #service-sidebar11,
+  #service-sidebar4,
+  #service-sidebar1,
+  #entertainment-sidebar8,
+  #entertainment-sidebar7,
+  #entertainment-sidebar6,
+  #entertainment-sidebar5,
+  #entertainment-sidebar4,
+  #entertainment-sidebar3,
+  #entertainment-sidebar2,
+  #transport-sidebar3,
+  #transport-sidebar2,
+  #transport-sidebar1,
+  #park-sidebar6,
+  #park-sidebar5,
+  #park-sidebar4,
+  #park-sidebar3,
+  #park-sidebar2,
+  #park-sidebar1,
+  #restaurant-sidebar5,
+  #restaurant-sidebar3,
+  #restaurant-sidebar1,
+  #education-sidebar11,
+  #education-sidebar10,
+  #education-sidebar9,
+  #education-sidebar8,
+  #education-sidebar7,
+  #education-sidebar6,
+  #education-sidebar5,
+  #education-sidebar4,
+  #education-sidebar3,
+  #education-sidebar2,
+  #education-sidebar1,
+  #market-sidebar29,
+  #market-sidebar28,
+  #market-sidebar27,
+  #market-sidebar26,
+  #market-sidebar24,
+  #market-sidebar23,
+  #market-sidebar22,
+  #market-sidebar21,
+  #market-sidebar20,
+  #market-sidebar18,
+  #market-sidebar17,
+  #market-sidebar16,
+  #market-sidebar14,
+  #market-sidebar13,
+  #market-sidebar12,
+  #market-sidebar9,
+  #market-sidebar8,
+  #market-sidebar7,
+  #market-sidebar5,
+  #market-sidebar4,
+  #market-sidebar3,
+  #market-sidebar2,
+  #market-sidebar1,
+  #medicine-sidebar17,
+  #medicine-sidebar16,
+  #medicine-sidebar15,
+  #medicine-sidebar14,
+  #medicine-sidebar13,
+  #medicine-sidebar12,
+  #medicine-sidebar11,
+  #medicine-sidebar10,
+  #medicine-sidebar9,
+  #medicine-sidebar8,
+  #medicine-sidebar7,
+  #medicine-sidebar6,
+  #medicine-sidebar5,
+  #medicine-sidebar3,
+  #medicine-sidebar2,
+  #medicine-sidebar1,
+  #admin-sidebar12,
+  #admin-sidebar11,
+  #admin-sidebar9,
+  #prom-sidebar8,
+  #prom-sidebar7,
+  #admin-sidebar5,
+  #admin-sidebar2,
+  #admin-sidebar1
+  {
+    font-family: Arial, sans-serif;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    min-width: 200px;
+    height: 50%;
+    background-color: white;
+    box-sizing: border-box;
+    display: none;
+    flex-direction: column;
+    gap: 19px;
+    transition: right 0.3s ease;
+    padding: 0;
+    border-radius: 20px 20px 20px 20px;
+    overflow-y: auto;
+    scrollbar-width: none; 
+  }
+
+    #service-sidebar36.active,
+    #service-sidebar34.active,
+    #service-sidebar33.active,
+    #service-sidebar32.active,
+    #service-sidebar31.active,
+    #service-sidebar28.active,
+    #service-sidebar27.active,
+    #service-sidebar24.active,
+    #service-sidebar23.active,
+    #service-sidebar21.active,
+    #service-sidebar20.active,
+    #service-sidebar19.active,
+    #service-sidebar14.active,
+    #service-sidebar11.active,
+    #service-sidebar4.active,
+    #service-sidebar1.active,
+    #entertainment-sidebar8.active,
+    #entertainment-sidebar7.active,
+    #entertainment-sidebar6.active,
+    #entertainment-sidebar5.active,
+    #entertainment-sidebar4.active,
+    #entertainment-sidebar3.active,
+    #entertainment-sidebar2.active,
+    #transport-sidebar3.active,
+    #transport-sidebar2.active,
+    #transport-sidebar1.active,
+    #park-sidebar6.active,
+    #park-sidebar5.active,
+    #park-sidebar4.active,
+    #park-sidebar3.active,
+    #park-sidebar2.active,
+    #park-sidebar1.active,
+    #restaurant-sidebar5.active,
+    #restaurant-sidebar3.active,
+    #restaurant-sidebar1.active,
+    #education-sidebar11.active,
+    #education-sidebar10.active,
+    #education-sidebar9.active,
+    #education-sidebar8.active,
+    #education-sidebar7.active,
+    #education-sidebar6.active,
+    #education-sidebar5.active,
+    #education-sidebar4.active,
+    #education-sidebar3.active,
+    #education-sidebar2.active,
+    #education-sidebar1.active,
+    #market-sidebar29.active,
+    #market-sidebar28.active,
+    #market-sidebar27.active,
+    #market-sidebar26.active,
+    #market-sidebar24.active,
+    #market-sidebar23.active,
+    #market-sidebar22.active,
+    #market-sidebar21.active,
+    #market-sidebar20.active,
+    #market-sidebar18.active,
+    #market-sidebar17.active,
+    #market-sidebar16.active,
+    #market-sidebar14.active,
+    #market-sidebar13.active,
+    #market-sidebar12.active,
+    #market-sidebar9.active,
+    #market-sidebar8.active,
+    #market-sidebar7.active,
+    #market-sidebar5.active,
+    #market-sidebar4.active,
+    #market-sidebar3.active,
+    #market-sidebar2.active,
+    #market-sidebar1.active,
+    #medicine-sidebar17.active,
+    #medicine-sidebar16.active,
+    #medicine-sidebar15.active,
+    #medicine-sidebar14.active,
+    #medicine-sidebar13.active,
+    #medicine-sidebar12.active,
+    #medicine-sidebar11.active,
+    #medicine-sidebar10.active,
+    #medicine-sidebar9.active,
+    #medicine-sidebar8.active,
+    #medicine-sidebar7.active,
+    #medicine-sidebar6.active,
+    #medicine-sidebar5.active,
+    #medicine-sidebar3.active,
+    #medicine-sidebar2.active,
+    #medicine-sidebar1.active,
+    #admin-sidebar12.active,
+    #admin-sidebar11.active,
+    #admin-sidebar9.active,
+    #prom-sidebar8.active,
+    #prom-sidebar7.active,
+    #admin-sidebar5.active,
+    #admin-sidebar2.active,
+    #admin-sidebar1.active
+    {
+    left: 0;
+    display: flex;
+    z-index: 999;
+    }
+}
+@media (min-width: 736px) {
+  #service-sidebar36,
+  #service-sidebar34,
+  #service-sidebar33,
+  #service-sidebar32,
+  #service-sidebar31,
+  #service-sidebar28,
+  #service-sidebar27,
+  #service-sidebar24,
+  #service-sidebar23,
+  #service-sidebar21,
+  #service-sidebar20,
+  #service-sidebar19,
+  #service-sidebar14,
+  #service-sidebar11,
+  #service-sidebar4,
+  #service-sidebar1,
+  #entertainment-sidebar8,
+  #entertainment-sidebar7,
+  #entertainment-sidebar6,
+  #entertainment-sidebar5,
+  #entertainment-sidebar4,
+  #entertainment-sidebar3,
+  #entertainment-sidebar2,
+  #transport-sidebar3,
+  #transport-sidebar2,
+  #transport-sidebar1,
+  #park-sidebar6,
+  #park-sidebar5,
+  #park-sidebar4,
+  #park-sidebar3,
+  #park-sidebar2,
+  #park-sidebar1,
+  #restaurant-sidebar5,
+  #restaurant-sidebar3,
+  #restaurant-sidebar1,
+  #education-sidebar11,
+  #education-sidebar10,
+  #education-sidebar9,
+  #education-sidebar8,
+  #education-sidebar7,
+  #education-sidebar6,
+  #education-sidebar5,
+  #education-sidebar4,
+  #education-sidebar3,
+  #education-sidebar2,
+  #education-sidebar1,
+  #market-sidebar29,
+  #market-sidebar28,
+  #market-sidebar27,
+  #market-sidebar26,
+  #market-sidebar24,
+  #market-sidebar23,
+  #market-sidebar22,
+  #market-sidebar21,
+  #market-sidebar20,
+  #market-sidebar18,
+  #market-sidebar17,
+  #market-sidebar16,
+  #market-sidebar14,
+  #market-sidebar13,
+  #market-sidebar12,
+  #market-sidebar9,
+  #market-sidebar8,
+  #market-sidebar7,
+  #market-sidebar5,
+  #market-sidebar4,
+  #market-sidebar3,
+  #market-sidebar2,
+  #market-sidebar1,
+  #medicine-sidebar17,
+  #medicine-sidebar16,
+  #medicine-sidebar15,
+  #medicine-sidebar14,
+  #medicine-sidebar13,
+  #medicine-sidebar12,
+  #medicine-sidebar11,
+  #medicine-sidebar10,
+  #medicine-sidebar9,
+  #medicine-sidebar8,
+  #medicine-sidebar7,
+  #medicine-sidebar6,
+  #medicine-sidebar5,
+  #medicine-sidebar3,
+  #medicine-sidebar2,
+  #medicine-sidebar1,
+  #admin-sidebar12,
+  #admin-sidebar11,
+  #admin-sidebar9,
+  #prom-sidebar8,
+  #prom-sidebar7,
+  #admin-sidebar5,
+  #admin-sidebar2,
+  #admin-sidebar1
+  {
+    font-family: Arial, sans-serif;
+    position: fixed;
+    bottom: 142.5px;
+    width: 25%;
+    min-width: 200px;
+    height: 65%;
+    background-color: white;
+    box-sizing: border-box;
+    display: none;
+    flex-direction: column;
+    gap: 24px;
+    transition: right 0.3s ease;
+    padding: 0;
+    border-radius: 20px 20px 20px 20px;
+    overflow-y: auto;
+    scrollbar-width: none; 
+  }
+
+    #service-sidebar36.active,
+    #service-sidebar34.active,
+    #service-sidebar33.active,
+    #service-sidebar32.active,
+    #service-sidebar31.active,
+    #service-sidebar28.active,
+    #service-sidebar27.active,
+    #service-sidebar24.active,
+    #service-sidebar23.active,
+    #service-sidebar21.active,
+    #service-sidebar20.active,
+    #service-sidebar19.active,
+    #service-sidebar14.active,
+    #service-sidebar11.active,
+    #service-sidebar4.active,
+    #service-sidebar1.active,
+    #entertainment-sidebar8.active,
+    #entertainment-sidebar7.active,
+    #entertainment-sidebar6.active,
+    #entertainment-sidebar5.active,
+    #entertainment-sidebar4.active,
+    #entertainment-sidebar3.active,
+    #entertainment-sidebar2.active,
+    #transport-sidebar3.active,
+    #transport-sidebar2.active,
+    #transport-sidebar1.active,
+    #park-sidebar6.active,
+    #park-sidebar5.active,
+    #park-sidebar4.active,
+    #park-sidebar3.active,
+    #park-sidebar2.active,
+    #park-sidebar1.active,
+    #restaurant-sidebar5.active,
+    #restaurant-sidebar3.active,
+    #restaurant-sidebar1.active,
+    #education-sidebar11.active,
+    #education-sidebar10.active,
+    #education-sidebar9.active,
+    #education-sidebar8.active,
+    #education-sidebar7.active,
+    #education-sidebar6.active,
+    #education-sidebar5.active,
+    #education-sidebar4.active,
+    #education-sidebar3.active,
+    #education-sidebar2.active,
+    #education-sidebar1.active,
+    #market-sidebar29.active,
+    #market-sidebar28.active,
+    #market-sidebar27.active,
+    #market-sidebar26.active,
+    #market-sidebar24.active,
+    #market-sidebar23.active,
+    #market-sidebar22.active,
+    #market-sidebar21.active,
+    #market-sidebar20.active,
+    #market-sidebar18.active,
+    #market-sidebar17.active,
+    #market-sidebar16.active,
+    #market-sidebar14.active,
+    #market-sidebar13.active,
+    #market-sidebar12.active,
+    #market-sidebar9.active,
+    #market-sidebar8.active,
+    #market-sidebar7.active,
+    #market-sidebar5.active,
+    #market-sidebar4.active,
+    #market-sidebar3.active,
+    #market-sidebar2.active,
+    #market-sidebar1.active,
+    #medicine-sidebar17.active,
+    #medicine-sidebar16.active,
+    #medicine-sidebar15.active,
+    #medicine-sidebar14.active,
+    #medicine-sidebar13.active,
+    #medicine-sidebar12.active,
+    #medicine-sidebar11.active,
+    #medicine-sidebar10.active,
+    #medicine-sidebar9.active,
+    #medicine-sidebar8.active,
+    #medicine-sidebar7.active,
+    #medicine-sidebar6.active,
+    #medicine-sidebar5.active,
+    #medicine-sidebar3.active,
+    #medicine-sidebar2.active,
+    #medicine-sidebar1.active,
+    #admin-sidebar12.active,
+    #admin-sidebar11.active,
+    #admin-sidebar9.active,
+    #prom-sidebar8.active,
+    #prom-sidebar7.active,
+    #admin-sidebar5.active,
+    #admin-sidebar2.active,
+    #admin-sidebar1.active
+    {
+        margin-left: min(28.5vw, 410px);
+        display: flex;
+    }
+}
+
+/* Стили изображений внутри панели категорий */
+#service-sidebar36 img,
+#service-sidebar34 img,
+#service-sidebar33 img,
+#service-sidebar32 img,
+#service-sidebar31 img,
+#service-sidebar28 img,
+#service-sidebar27 img,
+#service-sidebar24 img,
+#service-sidebar23 img,
+#service-sidebar21 img,
+#service-sidebar20 img,
+#service-sidebar19 img,
+#service-sidebar14 img,
+#service-sidebar11 img,
+#service-sidebar4 img,
+#entertainment-sidebar8 img,
+#entertainment-sidebar7 img,
+#entertainment-sidebar6 img,
+#entertainment-sidebar5 img,
+#entertainment-sidebar4 img,
+#entertainment-sidebar3 img,
+#entertainment-sidebar2 img,
+#transport-sidebar3 img,
+#transport-sidebar2 img,
+#transport-sidebar1 img,
+#park-sidebar6 img,
+#park-sidebar5 img,
+#park-sidebar4 img,
+#park-sidebar3 img,
+#park-sidebar2 img,
+#park-sidebar1 img,
+#restaurant-sidebar5 img,
+#restaurant-sidebar3 img,
+#restaurant-sidebar1 img,
+#education-sidebar11 img,
+#education-sidebar10 img,
+#education-sidebar9 img,
+#education-sidebar8 img,
+#education-sidebar7 img,
+#education-sidebar6 img,
+#education-sidebar5 img,
+#education-sidebar4 img,
+#education-sidebar3 img,
+#education-sidebar2 img,
+#education-sidebar1 img,
+#market-sidebar29 img,
+#market-sidebar28 img,
+#market-sidebar27 img,
+#market-sidebar26 img,
+#market-sidebar24 img,
+#market-sidebar23 img,
+#market-sidebar22 img,
+#market-sidebar21 img,
+#market-sidebar20 img,
+#market-sidebar18 img,
+#market-sidebar17 img,
+#market-sidebar16 img,
+#market-sidebar14 img,
+#market-sidebar13 img,
+#market-sidebar12 img,
+#market-sidebar9 img,
+#market-sidebar8 img,
+#market-sidebar7 img,
+#market-sidebar5 img,
+#market-sidebar4 img,
+#market-sidebar3 img,
+#market-sidebar2 img,
+#market-sidebar1 img,
+#medicine-sidebar17 img,
+#medicine-sidebar16 img,
+#medicine-sidebar15 img,
+#medicine-sidebar14 img,
+#medicine-sidebar13 img,
+#medicine-sidebar12 img,
+#medicine-sidebar11 img,
+#medicine-sidebar10 img,
+#medicine-sidebar9 img,
+#medicine-sidebar8 img,
+#medicine-sidebar7 img,
+#medicine-sidebar6 img,
+#medicine-sidebar5 img,
+#medicine-sidebar3 img,
+#medicine-sidebar2 img,
+#medicine-sidebar1 img,
+#admin-sidebar12 img,
+#admin-sidebar11 img,
+#admin-sidebar9 img,
+#prom-sidebar8 img,
+#prom-sidebar7 img,
+#admin-sidebar5 img,
+#admin-sidebar2 img,
+#admin-sidebar1 img
+{
+    width: 100%; 
+    height: auto;
+    display: block;
+    margin: 0;
+    padding-right: 0px; 
+    padding-left: 0px; 
+    object-fit: cover; 
+    margin-bottom: 20px;
+    border-radius: 20px 20px 0 0; 
+}
+
+/* Стили для текста внутри панелей категорий */
+#service-sidebar36 .textbox,
+#service-sidebar34 .textbox,
+#service-sidebar33 .textbox,
+#service-sidebar32 .textbox,
+#service-sidebar31 .textbox,
+#service-sidebar28 .textbox,
+#service-sidebar27 .textbox,
+#service-sidebar24 .textbox,
+#service-sidebar23 .textbox,
+#service-sidebar21 .textbox,
+#service-sidebar20 .textbox,
+#service-sidebar19 .textbox,
+#service-sidebar14 .textbox,
+#service-sidebar11 .textbox,
+#service-sidebar4 .textbox,
+#entertainment-sidebar8 .textbox,
+#entertainment-sidebar7 .textbox,
+#entertainment-sidebar6 .textbox,
+#entertainment-sidebar5 .textbox,
+#entertainment-sidebar4 .textbox,
+#entertainment-sidebar3 .textbox,
+#entertainment-sidebar2 .textbox,
+#transport-sidebar3 .textbox,
+#transport-sidebar2 .textbox,
+#transport-sidebar1 .textbox,
+#park-sidebar6 .textbox,
+#park-sidebar5 .textbox,
+#park-sidebar4 .textbox,
+#park-sidebar3 .textbox,
+#park-sidebar2 .textbox,
+#park-sidebar1 .textbox,
+#restaurant-sidebar5 .textbox,
+#restaurant-sidebar3 .textbox,
+#restaurant-sidebar1 .textbox,
+#education-sidebar11 .textbox,
+#education-sidebar10 .textbox,
+#education-sidebar9 .textbox,
+#education-sidebar8 .textbox,
+#education-sidebar7 .textbox,
+#education-sidebar6 .textbox,
+#education-sidebar5 .textbox,
+#education-sidebar4 .textbox,
+#education-sidebar3 .textbox,
+#education-sidebar2 .textbox,
+#education-sidebar1 .textbox,
+#market-sidebar29 .textbox,
+#market-sidebar28 .textbox,
+#market-sidebar27 .textbox,
+#market-sidebar26 .textbox,
+#market-sidebar24 .textbox,
+#market-sidebar23 .textbox,
+#market-sidebar22 .textbox,
+#market-sidebar21 .textbox,
+#market-sidebar20 .textbox,
+#market-sidebar18 .textbox,
+#market-sidebar17 .textbox,
+#market-sidebar16 .textbox,
+#market-sidebar14 .textbox,
+#market-sidebar13 .textbox,
+#market-sidebar12 .textbox,
+#market-sidebar9 .textbox,
+#market-sidebar8 .textbox,
+#market-sidebar7 .textbox,
+#market-sidebar5 .textbox,
+#market-sidebar4 .textbox,
+#market-sidebar3 .textbox,
+#market-sidebar2 .textbox,
+#market-sidebar1 .textbox,
+#medicine-sidebar17 .textbox,
+#medicine-sidebar16 .textbox,
+#medicine-sidebar15 .textbox,
+#medicine-sidebar14 .textbox,
+#medicine-sidebar13 .textbox,
+#medicine-sidebar12 .textbox,
+#medicine-sidebar11 .textbox,
+#medicine-sidebar10 .textbox,
+#medicine-sidebar9 .textbox,
+#medicine-sidebar8 .textbox,
+#medicine-sidebar7 .textbox,
+#medicine-sidebar6 .textbox,
+#medicine-sidebar5 .textbox,
+#medicine-sidebar3 .textbox,
+#medicine-sidebar2 .textbox,
+#medicine-sidebar1 .textbox,
+#admin-sidebar12 .textbox,
+#admin-sidebar11 .textbox,
+#admin-sidebar9 .textbox,
+#prom-sidebar8 .textbox,
+#prom-sidebar7 .textbox,
+#admin-sidebar5 .textbox,
+#admin-sidebar2 .textbox,
+#admin-sidebar1 .textbox
+ {
+    margin-top: -10px;
+    margin-left: 20px;
+}
+
+/* Жирный текст */
+#service-sidebar36 .bold,
+#service-sidebar34 .bold,
+#service-sidebar33 .bold,
+#service-sidebar32 .bold,
+#service-sidebar31 .bold,
+#service-sidebar28 .bold,
+#service-sidebar27 .bold,
+#service-sidebar24 .bold,
+#service-sidebar23 .bold,
+#service-sidebar21 .bold,
+#service-sidebar20 .bold,
+#service-sidebar19 .bold,
+#service-sidebar14 .bold,
+#service-sidebar11 .bold,
+#service-sidebar4 .bold,
+#entertainment-sidebar8 .bold,
+#entertainment-sidebar7 .bold,
+#entertainment-sidebar6 .bold,
+#entertainment-sidebar5 .bold,
+#entertainment-sidebar4 .bold,
+#entertainment-sidebar3 .bold,
+#entertainment-sidebar2 .bold,
+#transport-sidebar3 .bold,
+#transport-sidebar2 .bold,
+#transport-sidebar1 .bold,
+#park-sidebar6 .bold,
+#park-sidebar5 .bold,
+#park-sidebar4 .bold,
+#park-sidebar3 .bold,
+#park-sidebar2 .bold,
+#park-sidebar1 .bold,
+#restaurant-sidebar5 .bold,
+#restaurant-sidebar3 .bold,
+#restaurant-sidebar1 .bold,
+#education-sidebar11 .bold,
+#education-sidebar10 .bold,
+#education-sidebar9 .bold,
+#education-sidebar8 .bold,
+#education-sidebar7 .bold,
+#education-sidebar6 .bold,
+#education-sidebar5 .bold,
+#education-sidebar4 .bold,
+#education-sidebar3 .bold,
+#education-sidebar2 .bold,
+#education-sidebar1 .bold,
+#market-sidebar29 .bold,
+#market-sidebar28 .bold,
+#market-sidebar27 .bold,
+#market-sidebar26 .bold,
+#market-sidebar24 .bold,
+#market-sidebar23 .bold,
+#market-sidebar22 .bold,
+#market-sidebar21 .bold,
+#market-sidebar20 .bold,
+#market-sidebar18 .bold,
+#market-sidebar17 .bold,
+#market-sidebar16 .bold,
+#market-sidebar14 .bold,
+#market-sidebar13 .bold,
+#market-sidebar12 .bold,
+#market-sidebar9 .bold,
+#market-sidebar8 .bold,
+#market-sidebar7 .bold,
+#market-sidebar5 .bold,
+#market-sidebar4 .bold,
+#market-sidebar3 .bold,
+#market-sidebar2 .bold,
+#market-sidebar1 .bold,
+#medicine-sidebar17 .bold,
+#medicine-sidebar16 .bold,
+#medicine-sidebar15 .bold,
+#medicine-sidebar14 .bold,
+#medicine-sidebar13 .bold,
+#medicine-sidebar12 .bold,
+#medicine-sidebar11 .bold,
+#medicine-sidebar10 .bold,
+#medicine-sidebar9 .bold,
+#medicine-sidebar8 .bold,
+#medicine-sidebar7 .bold,
+#medicine-sidebar6 .bold,
+#medicine-sidebar5 .bold,
+#medicine-sidebar3 .bold,
+#medicine-sidebar2 .bold,
+#medicine-sidebar1 .bold,
+#admin-sidebar12 .bold,
+#admin-sidebar11 .bold,
+#admin-sidebar9 .bold,
+#prom-sidebar8 .bold,
+#prom-sidebar7 .bold,
+#admin-sidebar5 .bold,
+#admin-sidebar2 .bold,
+#admin-sidebar1 .bold
+ {
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+/* Маленький шрифт */
+#service-sidebar36 .small-gap,
+#service-sidebar34 .small-gap,
+#service-sidebar33 .small-gap,
+#service-sidebar32 .small-gap,
+#service-sidebar31 .small-gap,
+#service-sidebar28 .small-gap,
+#service-sidebar27 .small-gap,
+#service-sidebar24 .small-gap,
+#service-sidebar23 .small-gap,
+#service-sidebar21 .small-gap,
+#service-sidebar20 .small-gap,
+#service-sidebar19 .small-gap,
+#service-sidebar14 .small-gap,
+#service-sidebar12 .small-gap,
+#service-sidebar11 .small-gap,
+#service-sidebar4 .small-gap,
+#entertainment-sidebar8 .small-gap,
+#entertainment-sidebar7 .small-gap,
+#entertainment-sidebar6 .small-gap,
+#entertainment-sidebar5 .small-gap,
+#entertainment-sidebar4 .small-gap,
+#entertainment-sidebar3 .small-gap,
+#entertainment-sidebar2 .small-gap,
+#transport-sidebar3 .small-gap,
+#transport-sidebar2 .small-gap,
+#transport-sidebar1 .small-gap,
+#park-sidebar6 .small-gap,
+#park-sidebar5 .small-gap,
+#park-sidebar4 .small-gap,
+#park-sidebar3 .small-gap,
+#park-sidebar2 .small-gap,
+#park-sidebar1 .small-gap,
+#restaurant-sidebar5 .small-gap,
+#restaurant-sidebar3 .small-gap,
+#restaurant-sidebar1 .small-gap,
+#education-sidebar11 .small-gap,
+#education-sidebar10 .small-gap,
+#education-sidebar9 .small-gap,
+#education-sidebar8 .small-gap,
+#education-sidebar7 .small-gap,
+#education-sidebar6 .small-gap,
+#education-sidebar5 .small-gap,
+#education-sidebar4 .small-gap,
+#education-sidebar3 .small-gap,
+#education-sidebar2 .small-gap,
+#education-sidebar1 .small-gap,
+#market-sidebar29 .small-gap,
+#market-sidebar28 .small-gap,
+#market-sidebar27 .small-gap,
+#market-sidebar26 .small-gap,
+#market-sidebar24 .small-gap,
+#market-sidebar23 .small-gap,
+#market-sidebar22 .small-gap,
+#market-sidebar21 .small-gap,
+#market-sidebar20 .small-gap,
+#market-sidebar18 .small-gap,
+#market-sidebar17 .small-gap,
+#market-sidebar16 .small-gap,
+#market-sidebar14 .small-gap,
+#market-sidebar13 .small-gap,
+#market-sidebar12 .small-gap,
+#market-sidebar9 .small-gap,
+#market-sidebar8 .small-gap,
+#market-sidebar7 .small-gap,
+#market-sidebar5 .small-gap,
+#market-sidebar4 .small-gap,
+#market-sidebar3 .small-gap,
+#market-sidebar2 .small-gap,
+#market-sidebar1 .small-gap,
+#medicine-sidebar17 .small-gap,
+#medicine-sidebar16 .small-gap,
+#medicine-sidebar15 .small-gap,
+#medicine-sidebar14 .small-gap,
+#medicine-sidebar13 .small-gap,
+#medicine-sidebar12 .small-gap,
+#medicine-sidebar11 .small-gap,
+#medicine-sidebar10 .small-gap,
+#medicine-sidebar9 .small-gap,
+#medicine-sidebar8 .small-gap,
+#medicine-sidebar7 .small-gap,
+#medicine-sidebar6 .small-gap,
+#medicine-sidebar5 .small-gap,
+#medicine-sidebar3 .small-gap,
+#medicine-sidebar2 .small-gap,
+#medicine-sidebar1 .small-gap,
+#admin-sidebar12 .small-gap,
+#admin-sidebar11 .small-gap,
+#admin-sidebar9 .small-gap,
+#prom-sidebar8 .small-gap,
+#prom-sidebar7 .small-gap,
+#admin-sidebar5 .small-gap,
+#admin-sidebar2 .small-gap,
+#admin-sidebar1 .small-gap
+ {
+    margin-top: -10px;
+    margin-right: 30px;
+    font-size: 18px;
+    margin-left: 20px;
+}
+
+/* Заголовочный текст внутри панели категорий */
+#brateevo-text {
+    margin-right: 10px;
+    font-weight: bold;
+    font-size: 28px;
+    margin-left: 20px;
+}
+
+/* Логотипы партнеров проекта */
+#leftlogo {
+    width: 60%; 
+    display: flex;
+    flex-direction: column; 
+}
+
+ .logo {
+    text-align: left; 
+    width: 100%;
+    height: auto;
+    max-width: 380px ;
+  }
+  
+  .konkurs {
+    width: 100%;
+    max-height: 72px;
+    max-width: 350px;
+    height: auto;
+  }
+  
+  .onf {
+    text-align: center; 
+    width: 85%;
+    height: auto;
+    max-width: 250px;
+    margin-top: 3%;
+    margin-bottom: 8%;
+  }
+  
+  .CMIB {
+    justify-content: center;
+    position: absolute; 
+    width: 25%;
+    margin-right: 5%;
+    height: auto;
+    right: 0; 
+  }
+
+.onf img,
+.logo img,
+.CMIB img,
+.konkurs img {
+    max-width: 100%; 
+    max-height: 100%;
+    height: auto;
+}
+
+#search { /* Поиск */
+  width: 90%;
+  padding: 17px;
+  box-sizing: border-box;
+  border: none; 
+  border-radius: 10px;
+  font-family: 'Arial', sans-serif;
+  font-size: 14px;
+  background-color: #f2f2f2;
+  margin-left: 5%;
+}
+
+  .carousel-container::-webkit-scrollbar { /* Скрыть полосу прокрутки внутри контейнера с кнопками категорий для Вебкит-браузеров */
+    display: none; 
+}
+
+.carousel-item img { /* Изображение кнопок категорий */
+  width: 105%;
+  height: auto;
+  border-radius: 15px;  
+  align-self: flex-start;
+}
+
+.category {
+ background: none;
+ border: none;
+ padding: 15px;
+ text-align: left;
+ cursor: pointer;
+ color: black;
+ border-radius: 5px;
+ font-family: 'Arial', sans-serif;
+ font-size: 18px;
+}
+
+#show {
+    margin-top: auto;
+    background: none;
+    border: none;
+    padding: 15px;
+    text-align: left;
+    cursor: pointer;
+    color: black;
+    border-radius: 5px;
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+}
+
+/* Стили для кнопок */
+.button {
+    width:100%;
+    background: none;
+    border: none;
+    padding: 10px;
+    text-align: left;
+    cursor: pointer;
+    color: black;
+    border-radius: 5px;
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+.button-text {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    font-weight: bold;
+    letter-spacing: 0.5px;
+  }  
+
+#zoom-buttons {
+    position: fixed; 
+    top: 10px; 
+    right: 10px; 
+    z-index: 999; 
+}
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px; 
+    background-color: #ffffff; 
+    padding: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.zoom-button {
+    width: 35px;
+    height: 35px;
+    font-size: 30px;
+    margin: 3px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    transition: color 0.3s ease; 
+}

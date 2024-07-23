@@ -1,0 +1,1789 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,  initial-scale=1,  maximum-scale=1, user-scalable=no">
+    <title>Братеево</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+    <div id="logo-container"> <!-- Предзагрузочное изображение сайта для ширины более 750px -->
+        <img src="brateevo logo.webp" alt="Brateevo Logo " id="logo">
+    </div>
+        <div id="logo-container2"> <!-- Предзагрузочное изображение сайта для ширины менее 750px -->
+        <img src="brateevo logomobile.webp" alt="Brateevo Logo Mobile" id="logo Mobile">
+    </div>
+        <div id="zoom-buttons"  onclick=""> <!-- Кнопки отдаления и увеличения масштаба карты -->
+        <div class="button-container">
+            <button id="zoom-in" class="zoom-button">+</button>
+            <br>
+            <button id="zoom-out" class="zoom-button">-</button>
+        </div>
+    </div>
+
+    <div id="sidebar"> <!-- Главная боковая панель -->
+        <img src="textlogo.webp" alt="TextLogo" id="logo1"> <!-- Изображение с текстом заголовка, нужный шрифт можно подобрать на onlineletters.ru -->
+        <button id="close-button">&#215;</button> <!-- Кнопка закрытия, отображается только при ширине менее 750px -->
+        <input type="text" id="search" placeholder="🔎 Поиск"> <!-- Поле поиска -->
+        <div class="carousel-container"> <!-- Область с кнопками категорий -->
+                <div class="carousel-item admin" onclick="">
+                    <button class="button category" data-category="admin"> <!-- Администрация -->
+                        <img src="Icons/1.webp" alt="Image 1">
+                        <span class="button-text">ГОСУСЛУГИ</span>
+                    </button>
+                </div>
+                <div class="carousel-item medicine" onclick="">
+                    <button class="button category" data-category="medicine"> <!-- Медицина -->
+                        <img src="Icons/2.webp" alt="Image 2">
+                        <span class="button-text">МЕДИЦИНА</span>
+                    </button>
+                </div>
+                <div class="carousel-item education" onclick="">
+                    <button class="button category" data-category="education"> <!-- Образование -->
+                        <img src="Icons/8.webp" alt="Image 8">
+                        <span class="button-text">ОБРАЗОВАНИЕ</span>
+                    </button>
+                </div>
+                <div class="carousel-item market" onclick="">
+                    <button class="button category" data-category="market"> <!-- Магазины -->
+                        <img src="Icons/3.webp" alt="Image 3">
+                        <span class="button-text">ПРОДУКТЫ</span>
+                    </button>
+                </div>
+                <div class="carousel-item service" onclick="">
+                    <button class="button category" data-category="service"> <!-- Услуги -->
+                        <img src="Icons/6.webp" alt="Image 6">
+                        <span class="button-text">БЫТОВЫЕ УСЛУГИ</span>
+                    </button>
+                </div>
+                <div class="carousel-item transport" onclick="">
+                    <button class="button category" data-category="transport"> <!-- Общественный транспорт -->
+                        <img src="Icons/10.webp" alt="Image 10">
+                        <span class="button-text">ТРАНСПОРТ</span>
+                    </button>
+                </div>
+                <div class="carousel-item entertainment" onclick="">
+                    <button class="button category" data-category="entertainment"> <!-- Развлечения и досуг -->
+                        <img src="Icons/4.webp" alt="Image 4">
+                        <span class="button-text">ДОСУГ</span>
+                    </button>
+                </div>
+                <div class="carousel-item park" onclick="">
+                    <button class="button category" data-category="park"> <!-- Парки -->
+                        <img src="Icons/9.webp" alt="Image 9">
+                        <span class="button-text">ПАРКИ</span>
+                    </button>
+                </div>
+                <div class="carousel-item restaurant" onclick="">
+                    <button class="button category" data-category="restaurant"> <!-- Рестораны -->
+                        <img src="Icons/5.webp" alt="Image 5">
+                        <span class="button-text">РЕСТОРАНЫ</span>
+                    </button>
+                </div>
+                <div class="carousel-item prom" onclick="">
+                    <button class="button category" data-category="prom"> <!-- Местные сообщества -->
+                        <img src="Icons/7.webp" alt="Image 7">
+                        <span class="button-text">МЕСТНЫЕ СООБЩЕСТВА</span>
+                    </button>
+                </div>
+            </div>
+                <div id="icons-container"> <!-- Область с логотипами партнеров сайта -->
+                    <div id="leftlogo">
+                        <div class="logo">
+                            <img src="Icons/лого.webp" alt="Описание изображения"> <!-- Район равных возможностей -->
+                        </div>
+                        <div class="konkurs">
+                            <img src="Icons/Конкурс.webp" alt="Описание изображения"> <!-- Конкурс Москва добрый город -->
+                        </div>
+                         <div class="onf">
+                            <img src="Icons/онф.webp" alt="Описание изображения"> <!-- Народный фронт -->
+                        </div>
+                    </div>
+                    <div class="CMIB">
+                        <img src="Icons/СМИБ.webp" alt="Описание изображения"> <!-- ИКА СМИ и бизнес -->
+                    </div>
+                </div>
+            </div>
+
+    <div id="open-container"> <!-- Кнопка открытия главной боковой панели для ширины менее 750px -->
+        <button id="open-button" >&#8801;</button> 
+    </div>
+
+        <div id="outer-container">
+           <div id="map-container" style="cursor: grab; transform: scale(1.036) translate(-65px, 14px);"> <!-- Карта района, с заданным зумом и позиционированием -->
+                <img src="map.webp" alt="Map"> <!-- Изображение карты -->
+                <button id="mar-marker-button29" style="display: none;"></button> <!-- Метка на карте с ее категорией (market) и порядковым номером -->
+                <button id="mar-marker-button28" style="display: none;"></button>
+                <button id="ser-marker-button36" style="display: none;"></button> <!-- Метка на карте с ее категорией (service) и порядковым номером -->
+                <button id="ser-marker-button34" style="display: none;"></button>
+                <button id="ser-marker-button33" style="display: none;"></button>
+                <button id="ser-marker-button32" style="display: none;"></button>
+                <button id="ser-marker-button31" style="display: none;"></button>
+                <button id="ser-marker-button30" style="display: none;"></button>
+                <button id="ser-marker-button29" style="display: none;"></button>
+                <button id="ser-marker-button28" style="display: none;"></button>
+                <button id="ser-marker-button27" style="display: none;"></button>
+                <button id="ser-marker-button26" style="display: none;"></button>
+                <button id="ser-marker-button25" style="display: none;"></button>
+                <button id="ser-marker-button24" style="display: none;"></button>
+                <button id="ser-marker-button23" style="display: none;"></button>
+                <button id="ser-marker-button22" style="display: none;"></button>
+                <button id="ser-marker-button21" style="display: none;"></button>
+                <button id="ser-marker-button20" style="display: none;"></button>
+                <button id="ser-marker-button19" style="display: none;"></button>
+                <button id="ser-marker-button18" style="display: none;"></button>
+                <button id="ser-marker-button17" style="display: none;"></button>
+                <button id="ser-marker-button16" style="display: none;"></button>
+                <button id="ser-marker-button15" style="display: none;"></button>
+                <button id="ser-marker-button14" style="display: none;"></button>
+                <button id="ser-marker-button13" style="display: none;"></button>
+                <button id="ser-marker-button12" style="display: none;"></button>
+                <button id="ser-marker-button11" style="display: none;"></button>
+                <button id="ser-marker-button10" style="display: none;"></button>
+                <button id="ser-marker-button9" style="display: none;"></button>
+                <button id="ser-marker-button8" style="display: none;"></button>
+                <button id="ser-marker-button7" style="display: none;"></button>
+                <button id="ser-marker-button6" style="display: none;"></button>
+                <button id="ser-marker-button5" style="display: none;"></button>
+                <button id="ser-marker-button4" style="display: none;"></button>
+                <button id="ser-marker-button3" style="display: none;"></button>
+                <button id="ser-marker-button2" style="display: none;"></button>
+                <button id="ent-marker-button8" style="display: none;"></button> <!-- Метка на карте с ее категорией (entertainment) и порядковым номером -->
+                <button id="ent-marker-button7" style="display: none;"></button>
+                <button id="ent-marker-button6" style="display: none;"></button>
+                <button id="ent-marker-button5" style="display: none;"></button>
+                <button id="ent-marker-button4" style="display: none;"></button>
+                <button id="ent-marker-button3" style="display: none;"></button>
+                <button id="ent-marker-button2" style="display: none;"></button>
+                <button id="tra-marker-button3" style="display: none;"></button> <!-- Метка на карте с ее категорией (transport) и порядковым номером -->
+                <button id="tra-marker-button2" style="display: none;"></button>
+                <button id="tra-marker-button1" style="display: none;"></button>
+                <button id="par-marker-button6" style="display: none;"></button> <!-- Метка на карте с ее категорией (park) и порядковым номером -->
+                <button id="par-marker-button5" style="display: none;"></button>
+                <button id="par-marker-button4" style="display: none;"></button>
+                <button id="par-marker-button3" style="display: none;"></button>
+                <button id="par-marker-button2" style="display: none;"></button>
+                <button id="par-marker-button1" style="display: none;"></button>
+                <button id="res-marker-button5" style="display: none;"></button> <!-- Метка на карте с ее категорией (restaurant) и порядковым номером -->
+                <button id="res-marker-button4" style="display: none;"></button>
+                <button id="res-marker-button3" style="display: none;"></button>
+                <button id="res-marker-button2" style="display: none;"></button>
+                <button id="res-marker-button1" style="display: none;"></button>
+                <button id="edu-marker-button11" style="display: none;"></button> <!-- Метка на карте с ее категорией (education) и порядковым номером -->
+                <button id="edu-marker-button10" style="display: none;"></button>
+                <button id="edu-marker-button9" style="display: none;"></button>
+                <button id="edu-marker-button8" style="display: none;"></button>
+                <button id="edu-marker-button7" style="display: none;"></button>
+                <button id="edu-marker-button6" style="display: none;"></button>
+                <button id="edu-marker-button5" style="display: none;"></button>
+                <button id="edu-marker-button4" style="display: none;"></button>
+                <button id="edu-marker-button3" style="display: none;"></button>
+                <button id="edu-marker-button2" style="display: none;"></button>
+                <button id="edu-marker-button1" style="display: none;"></button>
+                <button id="mar-marker-button27" style="display: none;"></button>
+                <button id="mar-marker-button26" style="display: none;"></button>
+                <button id="mar-marker-button24" style="display: none;"></button>
+                <button id="mar-marker-button23" style="display: none;"></button>
+                <button id="mar-marker-button22" style="display: none;"></button>
+                <button id="mar-marker-button21" style="display: none;"></button>
+                <button id="mar-marker-button20" style="display: none;"></button>
+                <button id="mar-marker-button18" style="display: none;"></button>
+                <button id="mar-marker-button17" style="display: none;"></button>
+                <button id="mar-marker-button16" style="display: none;"></button>
+                <button id="mar-marker-button14" style="display: none;"></button>
+                <button id="mar-marker-button13" style="display: none;"></button>
+                <button id="mar-marker-button12" style="display: none;"></button>
+                <button id="mar-marker-button9" style="display: none;"></button>
+                <button id="mar-marker-button8" style="display: none;"></button>
+                <button id="mar-marker-button7" style="display: none;"></button>
+                <button id="mar-marker-button5" style="display: none;"></button>
+                <button id="mar-marker-button4" style="display: none;"></button>
+                <button id="mar-marker-button3" style="display: none;"></button>
+                <button id="mar-marker-button2" style="display: none;"></button>
+                <button id="mar-marker-button1" style="display: none;"></button>
+                <button id="med-marker-button17" style="display: none;"></button> <!-- Метка на карте с ее категорией (medicine) и порядковым номером -->
+                <button id="med-marker-button16" style="display: none;"></button>
+                <button id="med-marker-button15" style="display: none;"></button>
+                <button id="med-marker-button14" style="display: none;"></button>
+                <button id="med-marker-button13" style="display: none;"></button>
+                <button id="med-marker-button12" style="display: none;"></button>
+                <button id="med-marker-button11" style="display: none;"></button>
+                <button id="med-marker-button10" style="display: none;"></button>
+                <button id="med-marker-button9" style="display: none;"></button>
+                <button id="med-marker-button8" style="display: none;"></button>
+                <button id="med-marker-button7" style="display: none;"></button>
+                <button id="med-marker-button6" style="display: none;"></button>
+                <button id="med-marker-button5" style="display: none;"></button>
+                <button id="med-marker-button3" style="display: none;"></button>
+                <button id="med-marker-button2" style="display: none;"></button>
+                <button id="med-marker-button1" style="display: none;"></button>
+                <button id="adm-marker-button12" style="display: none;"></button> <!-- Метка на карте с ее категорией (administration) и порядковым номером -->
+                <button id="adm-marker-button11" style="display: none;"></button>
+                <button id="adm-marker-button9" style="display: none;"></button>
+                <button id="pro-marker-button8" style="display: none;"></button> <!-- Метка на карте с ее категорией (prom) и порядковым номером -->
+                <button id="pro-marker-button7" style="display: none;"></button>
+                <button id="adm-marker-button5" style="display: none;"></button>
+                <button id="adm-marker-button2" style="display: none;"></button>
+                <button id="adm-marker-button1" style="display: none;"></button>
+            </div>
+        </div>
+
+<div id="market-sidebar28" class="sidebar"> <!-- Боковая панель категории, которая открывается по нажатию на соотвествующий ей маркер на карте -->
+    <img src="Prom/8.webp" alt="Brateevo"> <!-- Папка с фото этого места -->
+    <div id="brateevo-text" class="textbox bold">Товары для дома "Fix Price"</div> <!-- Название орагнизации -->
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div> <!-- Доступность -->
+    <div class="textbox small-gap">Адаптированный вход</div> <!-- Что входит в доступность -->
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div> <!-- Адрес -->
+    <div class="textbox small-gap">ул. Борисовские пруды, 10 А</div> <!-- Что входит в адрес -->
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div> <!-- Сайт -->
+    <div class="textbox small-gap"><a href="https://https://fix-price.com/">https://fix-price.com/</a></div> <!-- Ссылка на сайт -->
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button> <!-- Кнопка закрытия боковой панели категории -->
+</div>
+
+<div id="market-sidebar29" class="sidebar"> <!-- Сдвоенная боковая панель категории, которая открывается по нажатию на соотвествующий ей маркер на карте -->
+    <img src="Prom/1.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Товары для дома "Fix Price"</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Паромная 9, корп.4, 1 этаж</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://fix-price.com/">https://fix-price.com/</a></div>
+    <img src="Prom/1.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Торговый дом "Ассортиада"</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Паромная 9, корп.4</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://assortida.ru/">https://assortida.ru/</a></div>
+    <div style="position: absolute; top: 260px; left: 273px; z-index: 999;">
+        <button class="scroll-button" type="button" style="position: fixed; width: 40px; height: 40px; border-radius: 0px 0px 15px 15px; background-color: #f2f2f2; border: none; outline: none; text-align: center; font-size: 20px; color: #ffffff; background-color: #c90000;">↓</button> <!-- Кнопка прокрутки боковой панели категории вниз до упора -->
+    </div>
+    <div style="position: absolute; top: 225px; left: 273px; z-index: 999;">
+        <button class="scroll-button2" type="button" style="position: fixed; width: 40px; height: 40px; border-radius: 15px 15px 0px 0px; background-color: #f2f2f2; border: none; outline: none; text-align: center; font-size: 20px; color: #ffffff; background-color: #c90000;">↑</button> <!-- Кнопка прокрутки боковой панели категории вверх до упора -->
+    </div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button> <!-- Кнопка закрытия боковой панели категории -->
+</div>
+
+<!-- Далее по аналогии с предыдущими... -->
+<div id="service-sidebar36" class="sidebar">
+    <img src="Services/36.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Пункт выдачи ОЗОН</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Алма-Атинская, 3 корп. 1 А</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://"></a></div>
+    <img src="Services/36.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Дом быта</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Алма-Атинская, 3, корп. 1 А</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://"></a></div>
+    <div style="position: absolute; top: 260px; left: 273px; z-index: 999;">
+        <button class="scroll-button" type="button" style="position: fixed; width: 40px; height: 40px; border-radius: 0px 0px 15px 15px; background-color: #f2f2f2; border: none; outline: none; text-align: center; font-size: 20px; color: #ffffff; background-color: #c90000;">↓</button>
+    </div>
+    <div style="position: absolute; top: 225px; left: 273px; z-index: 999;">
+        <button class="scroll-button2" type="button" style="position: fixed; width: 40px; height: 40px; border-radius: 15px 15px 0px 0px; background-color: #f2f2f2; border: none; outline: none; text-align: center; font-size: 20px; color: #ffffff; background-color: #c90000;">↑</button>
+    </div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="service-sidebar34" class="sidebar">
+    <img src="Services/34.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Отделение почтовой связи 115612</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Ключевая 6, корп. 3</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://"></a></div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="service-sidebar33" class="sidebar">
+    <img src="Services/33.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Пункт выдачи Яндекс</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Паромная 9, корп. 1</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://"></a></div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="service-sidebar32" class="sidebar">
+    <img src="Services/32.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Пункт выдачи ОЗОН</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Борисовские пруды, 12, корп. 1</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://www.ozon.ru/">https://www.ozon.ru/</a></div>
+    <img src="Services/30.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Отделение Сбербанка</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Борисовские пруды, 12, корп. 1</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://"></a></div>
+    <div style="position: absolute; top: 260px; left: 273px; z-index: 999;">
+        <button class="scroll-button" type="button" style="position: fixed; width: 40px; height: 40px; border-radius: 0px 0px 15px 15px; background-color: #f2f2f2; border: none; outline: none; text-align: center; font-size: 20px; color: #ffffff; background-color: #c90000;">↓</button>
+    </div>
+    <div style="position: absolute; top: 225px; left: 273px; z-index: 999;">
+        <button class="scroll-button2" type="button" style="position: fixed; width: 40px; height: 40px; border-radius: 15px 15px 0px 0px; background-color: #f2f2f2; border: none; outline: none; text-align: center; font-size: 20px; color: #ffffff; background-color: #c90000;">↑</button>
+    </div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="service-sidebar31" class="sidebar">
+    <img src="Services/31.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Ремонтная мастерская Тэхла</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход, в ТЦ "Авоська"</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Борисовские пруды, 14, корп. 4</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://tehla.clients.site/">https://tehla.clients.site/</a></div>
+    <img src="Services/31.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Химчистка</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход, в ТЦ "Авоська"</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Борисовские пруды, 14, корп. 4</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://"></a></div>
+    <div style="position: absolute; top: 260px; left: 273px; z-index: 999;">
+        <button class="scroll-button" type="button" style="position: fixed; width: 40px; height: 40px; border-radius: 0px 0px 15px 15px; background-color: #f2f2f2; border: none; outline: none; text-align: center; font-size: 20px; color: #ffffff; background-color: #c90000;">↓</button>
+    </div>
+    <div style="position: absolute; top: 225px; left: 273px; z-index: 999;">
+        <button class="scroll-button2" type="button" style="position: fixed; width: 40px; height: 40px; border-radius: 15px 15px 0px 0px; background-color: #f2f2f2; border: none; outline: none; text-align: center; font-size: 20px; color: #ffffff; background-color: #c90000;">↑</button>
+    </div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="service-sidebar28" class="sidebar">
+    <img src="Services/28.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Салон красоты «Марьюшка»</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Ключевая 20</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://vk.com/salonmaryushka?w=club212246883">https://vk.com/salonmaryushka?w=club212246883</a></div>
+</div>
+
+<div id="service-sidebar27" class="sidebar">
+    <img src="Services/27.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Отделение почтовой связи №115408</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Братеевская 39, корп.12 стр.2</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://www.pochta.ru/">https://www.pochta.ru/</a></div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="service-sidebar24" class="sidebar">
+    <img src="Services/24.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Студия красоты «ANDERSON»</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Братеевская 16, корп.6</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://anderson-brateevskaja-ulitsa.clients.site/">https://anderson-brateevskaja-ulitsa.clients.site/</a></div>
+    <img src="Services/26.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Эстетическая косметология ATLANTA</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Братеевская 16, корп.6</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://mst.link/atlanta_cosmetology">https://mst.link/atlanta_cosmetology</a></div>
+    <img src="Services/26.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Студия маникюра «Beauty bunker princess»</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Братеевская 16, корп.6</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://"></a></div>
+    <img src="Services/26.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Пункт выдачи ОЗОН</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Братеевская, 16, корп.6</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://"></a></div>
+    <div style="position: absolute; top: 260px; left: 273px; z-index: 999;">
+        <button class="scroll-button" type="button" style="position: fixed; width: 40px; height: 40px; border-radius: 0px 0px 15px 15px; background-color: #f2f2f2; border: none; outline: none; text-align: center; font-size: 20px; color: #ffffff; background-color: #c90000;">↓</button>
+    </div>
+    <div style="position: absolute; top: 225px; left: 273px; z-index: 999;">
+        <button class="scroll-button2" type="button" style="position: fixed; width: 40px; height: 40px; border-radius: 15px 15px 0px 0px; background-color: #f2f2f2; border: none; outline: none; text-align: center; font-size: 20px; color: #ffffff; background-color: #c90000;">↑</button>
+    </div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="service-sidebar23" class="sidebar">
+    <img src="Services/23.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Ремонтная мастерская</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Паромная 7, корп.5</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://"></a></div>
+    <img src="Services/23.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Парикмахерская "Эконом"</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Паромная 7, корп.5</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://salonykr.ru/moskva/prk695?yandex-source=desktop-maps">https://salonykr.ru/moskva/prk695?yandex-source=desktop-maps</a></div>
+    <div style="position: absolute; top: 260px; left: 273px; z-index: 999;">
+        <button class="scroll-button" type="button" style="position: fixed; width: 40px; height: 40px; border-radius: 0px 0px 15px 15px; background-color: #f2f2f2; border: none; outline: none; text-align: center; font-size: 20px; color: #ffffff; background-color: #c90000;">↓</button>
+    </div>
+    <div style="position: absolute; top: 225px; left: 273px; z-index: 999;">
+        <button class="scroll-button2" type="button" style="position: fixed; width: 40px; height: 40px; border-radius: 15px 15px 0px 0px; background-color: #f2f2f2; border: none; outline: none; text-align: center; font-size: 20px; color: #ffffff; background-color: #c90000;">↑</button>
+    </div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="service-sidebar21" class="sidebar">
+    <img src="Services/21.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Фотосалон "Артфото" </div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход, расположен в универсаме "Пятерочка", 1 этаж</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Паромная 7, корп.1</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://artphoto.tv/">https://artphoto.tv/</a></div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="service-sidebar20" class="sidebar">
+    <img src="Services/20.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Салон красоты  «Ольга»</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Борисовские пруды 30</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://xn----7sbbl2bbmhcy2k.xn--p1ai/">https://xn----7sbbl2bbmhcy2k.xn--p1ai/</a></div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="service-sidebar19" class="sidebar">
+    <img src="Products/17.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Мультифото, фотоуслуги</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход, расположен в ТЦ "БраVo", 1 этаж</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Борисовские пруды 26, корп.2</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://multifoto.ru/">https://multifoto.ru/</a></div>
+    <img src="Products/17.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Парикмахерская «Соловей»</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход, расположен в ТЦ "БраVo", 2 этаж</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Борисовские пруды 26, корп.2</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://brateevo.su/org/salon-krasoty-solovei-na-ulice-borisovskie-prudy">https://brateevo.su/org/salon-krasoty-solovei-na-ulice-borisovskie-prudy</a></div>
+    <img src="Products/17.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Маникюр Педикюр «4hands»</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход, расположен в ТЦ "БраVo", 2 этаж</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Борисовские пруды 26, корп.2</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://4hands-brateevo.ru/">https://4hands-brateevo.ru/</a></div>
+    <img src="Products/17.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Барбершоп "TopGun"</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход, расположен в ТЦ "БраVo", 2 этаж</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Борисовские пруды 26, корп.2</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://topgun.ru/">https://topgun.ru/</a></div>
+    <img src="Products/17.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Салон красоты «Brow Bar»</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход, расположен в ТЦ "БраVo", 2 этаж</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Борисовские пруды 26, корп.2</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://browbarbravo.ru/">https://browbarbravo.ru/</a></div>
+    <img src="Products/17.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">МТС, салон связи</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход, расположен в ТЦ "БраVo", 1 этаж</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Борисовские пруды 26, корп.2</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://moskva.mts.ru/">https://moskva.mts.ru/</a></div>
+    <div style="position: absolute; top: 260px; left: 273px; z-index: 999;">
+        <button class="scroll-button" type="button" style="position: fixed; width: 40px; height: 40px; border-radius: 0px 0px 15px 15px; background-color: #f2f2f2; border: none; outline: none; text-align: center; font-size: 20px; color: #ffffff; background-color: #c90000;">↓</button>
+    </div>
+    <div style="position: absolute; top: 225px; left: 273px; z-index: 999;">
+        <button class="scroll-button2" type="button" style="position: fixed; width: 40px; height: 40px; border-radius: 15px 15px 0px 0px; background-color: #f2f2f2; border: none; outline: none; text-align: center; font-size: 20px; color: #ffffff; background-color: #c90000;">↑</button>
+    </div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="service-sidebar14" class="sidebar">
+    <img src="Products/16.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Фото-копировальный центр "Копирка"</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход, расположен в ТЦ "Ключевой", 1 этаж, в прикассовой зоне магазина Перекресток</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Борисовские пруды 26</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://kopirka.ru/">https://kopirka.ru/</a></div>
+    <img src="Products/16.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Студия красоты "ИРИС"</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход, расположен в ТЦ "Ключевой", 1 этаж</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Борисовские пруды 26, 1 этаж</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://http://iriss-salon.ru/">http://iriss-salon.ru/</a></div>
+    <img src="Products/16.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Парихмахерская детская «Прическин»</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход, расположен в ТЦ "Ключевой", 3 этаж</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Борисовские пруды 26</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://www.pricheskin.ru/">https://www.pricheskin.ru/</a></div>
+    <img src="Products/16.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Салон красоты «Sanskrit»</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход, расположен в ТЦ "Ключевой", 1 этаж</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Борисовские пруды 26</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://sanskrit.clients.site/">https://sanskrit.clients.site/</a></div>
+    <img src="Products/16.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">"Студия маникюра Лены Лениной" </div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход, расположен в ТЦ "Ключевой", 1 этаж</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Борисовские пруды 26</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://llmanikur.ru/">https://llmanikur.ru/</a></div>
+    <img src="Products/16.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Сбербанк</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход, расположен в ТЦ "Ключевой", 1 этаж</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Борисовские пруды 26</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://www.sberbank.com/">https://www.sberbank.com/</a></div>
+    <img src="Products/16.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Салон красоты "Точка красоты"</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход, расположен в ТЦ "Ключевой", 1 этаж</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Борисовские пруды 26</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://tochkaicomily.ru/salmaps/salon-tochka-krasoty-na-alma-atinskoy">https://tochkafamily.ru/salmaps/salon-tochka-krasoty-na-alma-atinskoy</a></div>
+    <img src="Products/16.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">МТС, салон связи</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход, расположен в ТЦ "Ключевой", 1 этаж</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Борисовские пруды 26</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://moskva.mts.ru/">https://moskva.mts.ru/</a></div>
+    <div style="position: absolute; top: 260px; left: 273px; z-index: 999;">
+        <button class="scroll-button" type="button" style="position: fixed; width: 40px; height: 40px; border-radius: 0px 0px 15px 15px; background-color: #f2f2f2; border: none; outline: none; text-align: center; font-size: 20px; color: #ffffff; background-color: #c90000;">↓</button>
+    </div>
+    <div style="position: absolute; top: 225px; left: 273px; z-index: 999;">
+        <button class="scroll-button2" type="button" style="position: fixed; width: 40px; height: 40px; border-radius: 15px 15px 0px 0px; background-color: #f2f2f2; border: none; outline: none; text-align: center; font-size: 20px; color: #ffffff; background-color: #c90000;">↑</button>
+    </div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="service-sidebar11" class="sidebar">
+    <img src="Services/11.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Парикмахерская «Смартгрупп»</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Алма-Атинская 11, корп.1, 1 этаж</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://salonykr.ru/moskva/prk687">https://salonykr.ru/moskva/prk687</a></div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="service-sidebar4" class="sidebar">
+    <img src="Products/11.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Фотосалон "Артфото" фотоуслуги</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход, расположен в ТЦ "Братеевский" 2 этаж</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Ключевая 6, корп.1</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://artphoto.tv/">https://artphoto.tv/</a></div>
+    <img src="Products/11.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Парикмахерская «Престиж»</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход, расположен в ТЦ "Братеевский" 2 этаж</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Ключевая 6, корп.1</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://brateevo.su/org/salon-prestizh">https://brateevo.su/org/salon-prestizh</a></div>
+    <img src="Products/11.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Салон красоты «Студия ЖАНАРА»</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход, расположен в ТЦ "Братеевский" 2 этаж</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Ключевая 6, корп.1</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://-">-</a></div>
+    <div style="position: absolute; top: 260px; left: 273px; z-index: 999;">
+        <button class="scroll-button" type="button" style="position: fixed; width: 40px; height: 40px; border-radius: 0px 0px 15px 15px; background-color: #f2f2f2; border: none; outline: none; text-align: center; font-size: 20px; color: #ffffff; background-color: #c90000;">↓</button>
+    </div>
+    <div style="position: absolute; top: 225px; left: 273px; z-index: 999;">
+        <button class="scroll-button2" type="button" style="position: fixed; width: 40px; height: 40px; border-radius: 15px 15px 0px 0px; background-color: #f2f2f2; border: none; outline: none; text-align: center; font-size: 20px; color: #ffffff; background-color: #c90000;">↑</button>
+    </div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="entertainment-sidebar8" class="sidebar">
+    <img src="Administration/11.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">АНО «Спорткомплекс «Южный»</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Ключевая 22, корп.2</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://brateevo.mos.ru/leisure-sports/detail/2292367.html">https://brateevo.mos.ru/leisure-sports/detail/2292367.html</a></div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="entertainment-sidebar7" class="sidebar">
+    <img src="Entertaintments/7.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Библиотека № 150</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Ключевая 10, корп.2</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://bibliouao.ru/biblio_150_2">https://bibliouao.ru/biblio_150_2</a></div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="entertainment-sidebar6" class="sidebar">
+    <img src="Entertaintments/6.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Культурный центр «Братеево </div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул.Братеевская 16, корп.3</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://kulturauao.ru/brateevo">https://kulturauao.ru/brateevo</a></div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="entertainment-sidebar5" class="sidebar">
+    <img src="Entertaintments/5.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Детская школа искусств № 10</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Братеевская 25, корп.2</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://10.arts.mos.ru/">https://10.arts.mos.ru/</a></div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="entertainment-sidebar4" class="sidebar">
+    <img src="Entertaintments/4.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Досугово-спортивный центр "Мир молодых"</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Ключевая  4, корп.2</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://mir-molodih.ru/">https://mir-molodih.ru/</a></div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="entertainment-sidebar3" class="sidebar">
+    <img src="Entertaintments/3.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Досугово-спортивный центр "Мир молодых"</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Алма-Атинская 11, корп.1</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://mir-molodih.ru/">https://mir-molodih.ru/</a></div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="entertainment-sidebar2" class="sidebar">
+    <img src="Entertaintments/2.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Библиотека № 150</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Борисовские пруды 10, корп.5</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://bibliouao.ru/biblio_150_1">https://bibliouao.ru/biblio_150_1</a></div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="transport-sidebar3" class="sidebar">
+    <img src="Transport/3.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Автовокзал "Южные ворота"</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированная входная группа, выход на перроны, отсутствие ступеней на всей территории автовокзала, пециализированный санузел</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">19 км. МКАД, владение 20.</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://"></a></div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="transport-sidebar2" class="sidebar">
+    <img src="Transport/2.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">М. Алма-Атинская </div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Братеевская 39</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://"></a></div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="transport-sidebar1" class="sidebar">
+    <img src="Transport/1.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Метро "Борисово"</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">Братеевский проезд</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://"></a></div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="park-sidebar6" class="sidebar">
+    <img src="Park/6.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Ветеранский дворик - парк культуры и отдыха</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Братеевская </div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://"></a></div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="park-sidebar5" class="sidebar">
+    <img src="Park/5.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Парк культуры "Народный исток"</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Ключевая </div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://"></a></div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="park-sidebar4" class="sidebar">
+    <img src="Park/4.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Братеевская пойма  </div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">от М. Алма - Атинская</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://"></a></div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="park-sidebar3" class="sidebar">
+    <img src="Park/3.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Парк в пойме реки Городни </div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">от М. Алма - Атинская</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://"></a></div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="park-sidebar2" class="sidebar">
+    <img src="Park/2.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Братеевская набережная </div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">от М. Алма - Атинская</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://"></a></div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="park-sidebar1" class="sidebar">
+    <img src="Park/1.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Московские сезоны - Парк атракционов</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Братеевская </div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://"></a></div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="restaurant-sidebar5" class="sidebar">
+    <img src="Restaurants/5.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Предприятие быстрого питания "Бургер Кинг"</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход, расположен в ТЦ "Парк Хаус"</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">Бесединское шоссе, вл. 15, 1 этаж</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://burgerkingrus.ru/">https://burgerkingrus.ru/</a></div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="restaurant-sidebar3" class="sidebar">
+    <img src="Products/17.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Кофейня "One Price Coffee"</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход, расположена в ТЦ "БраVo"</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Борисовские пруды 26, корп.2</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://onepricecoffee.com/">https://onepricecoffee.com/</a></div>
+    <img src="Products/17.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Магазин кулинарии "Милти"</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход, расположен в ТЦ "БраVo"</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Борисовские пруды 26, корп.2, 1 этаж</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://www.mealty.ru/">https://www.mealty.ru/</a></div>
+    <img src="Products/17.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Предприятие быстрого питания "Вкусно и Точка"</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Борисовские пруды 26, корп.2, 1 этаж</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://vkusnoitochka.ru/">https://vkusnoitochka.ru/</a></div>
+    <div style="position: absolute; top: 260px; left: 273px; z-index: 999;">
+        <button class="scroll-button" type="button" style="position: fixed; width: 40px; height: 40px; border-radius: 0px 0px 15px 15px; background-color: #f2f2f2; border: none; outline: none; text-align: center; font-size: 20px; color: #ffffff; background-color: #c90000;">↓</button>
+    </div>
+    <div style="position: absolute; top: 225px; left: 273px; z-index: 999;">
+        <button class="scroll-button2" type="button" style="position: fixed; width: 40px; height: 40px; border-radius: 15px 15px 0px 0px; background-color: #f2f2f2; border: none; outline: none; text-align: center; font-size: 20px; color: #ffffff; background-color: #c90000;">↑</button>
+    </div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="restaurant-sidebar1" class="sidebar">
+    <img src="Restaurants/1.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Предприятие быстрого питания "Вкусно и Точка" </div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход, расположен в ТЦ "Пруды"</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap"> ул. Борисовские пруды 8А</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://vkusnoitochka.ru/">https://vkusnoitochka.ru/</a></div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="education-sidebar11" class="sidebar">
+    <img src="Education/11.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Средняя общеобразовательная частная школа "НАСЛЕДНИК"</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Борисовские пруды, 19, корп.1</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://naslednik.mskobr.ru/">https://naslednik.mskobr.ru/</a></div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="education-sidebar10" class="sidebar">
+    <img src="Education/10.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Школа № 1998 «Лукоморье»</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Борисовские пруды 12, корп.2</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://sch1998u.mskobr.ru/">https://sch1998u.mskobr.ru/</a></div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="education-sidebar9" class="sidebar">
+    <img src="Education/9.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Школа № 1034 имени Героя Советского Союза Маркина В.В.</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Алма-Атинская 9, корп.3</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://sch1034.mskobr.ru/">https://sch1034.mskobr.ru/</a></div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="education-sidebar8" class="sidebar">
+    <img src="Education/8.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Школа № 1034 имени Героя Советского Союза Маркина В.В.</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Братеевская, 18</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://sch1034.mskobr.ru/">https://sch1034.mskobr.ru/</a></div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="education-sidebar7" class="sidebar">
+    <img src="Education/7.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Школа № 1034 имени Героя Советского Союза Маркина В.В.</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Братеевская 23, корп.4</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://sch1034.mskobr.ru/">https://sch1034.mskobr.ru/</a></div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="education-sidebar6" class="sidebar">
+    <img src="Education/6.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Школа № 1034 имени Героя Советского Союза Маркина В.В.</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Братеевская 8, корп.2</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://sch1034.mskobr.ru/">https://sch1034.mskobr.ru/</a></div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="education-sidebar5" class="sidebar">
+    <img src="Education/5.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Школа № 998</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Борисовские пруды 36, корп.2</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://sch998u.mskobr.ru/">https://sch998u.mskobr.ru/</a></div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="education-sidebar4" class="sidebar">
+    <img src="Education/4.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Школа № 998</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Паромная 5, корп.3</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://sch998u.mskobr.ru/">https://sch998u.mskobr.ru/</a></div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="education-sidebar3" class="sidebar">
+    <img src="Education/3.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Школа № 1998 «Лукоморье»</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Борисовские пруды 12, корп.3</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://sch1998u.mskobr.ru/">https://sch1998u.mskobr.ru/</a></div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="education-sidebar2" class="sidebar">
+    <img src="Education/2.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Школа № 867</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Борисовские пруды, 20, корп.3</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://sch867u.mskobr.ru/">https://sch867u.mskobr.ru/</a></div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="education-sidebar1" class="sidebar">
+    <img src="Education/1.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Школа № 867</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Ключевая 6, корп.2</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://sch867u.mskobr.ru/">https://sch867u.mskobr.ru/</a></div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="market-sidebar27" class="sidebar">
+    <img src="Products/27.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Супермаркет "Дикси"</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Алма-Атинская, 3 корп. 1 А</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://dixy.ru/">https://dixy.ru/</a></div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="market-sidebar26" class="sidebar">
+    <img src="Products/26.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Супермаркет "Дикси"</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Паромная 11/31</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://dixy.ru/">https://dixy.ru/</a></div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="market-sidebar24" class="sidebar">
+    <img src="Products/24.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Магазин продуктов "Мяснов"</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Паромная, 7</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://www.coolclever.ru/catalog/myasnov">https://www.coolclever.ru/catalog/myasnov</a></div>
+    <img src="Prom/7.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Магазин косметики "Подружка"</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Паромная, 7</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://www.podrygka.ru/">https://www.podrygka.ru/</a></div>
+    <img src="Products/19.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Супермаркет «Пятерочка»</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Паромная 7, корп.1</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://5ka.ru/">https://5ka.ru/</a></div>
+    <div style="position: absolute; top: 260px; left: 273px; z-index: 999;">
+        <button class="scroll-button" type="button" style="position: fixed; width: 40px; height: 40px; border-radius: 0px 0px 15px 15px; background-color: #f2f2f2; border: none; outline: none; text-align: center; font-size: 20px; color: #ffffff; background-color: #c90000;">↓</button>
+    </div>
+    <div style="position: absolute; top: 225px; left: 273px; z-index: 999;">
+        <button class="scroll-button2" type="button" style="position: fixed; width: 40px; height: 40px; border-radius: 15px 15px 0px 0px; background-color: #f2f2f2; border: none; outline: none; text-align: center; font-size: 20px; color: #ffffff; background-color: #c90000;">↑</button>
+    </div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="market-sidebar23" class="sidebar">
+    <img src="Products/23.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Супермаркет «Магнит»</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Алма-Атинская, 7, корп. 1</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://magnit.ru/">https://magnit.ru/</a></div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="market-sidebar22" class="sidebar">
+    <img src="Products/22.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Супермаркет «Пятерочка»</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Братеевская 37, корп.1</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://5ka.ru/">https://5ka.ru/</a></div>
+    <img src="Products/15.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Магазин продуктов  «Вкус Вилл»</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Братеевская 37, корп.1</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://vkusvill.ru/">https://vkusvill.ru/</a></div>
+    <div style="position: absolute; top: 260px; left: 273px; z-index: 999;">
+        <button class="scroll-button" type="button" style="position: fixed; width: 40px; height: 40px; border-radius: 0px 0px 15px 15px; background-color: #f2f2f2; border: none; outline: none; text-align: center; font-size: 20px; color: #ffffff; background-color: #c90000;">↓</button>
+    </div>
+    <div style="position: absolute; top: 225px; left: 273px; z-index: 999;">
+        <button class="scroll-button2" type="button" style="position: fixed; width: 40px; height: 40px; border-radius: 15px 15px 0px 0px; background-color: #f2f2f2; border: none; outline: none; text-align: center; font-size: 20px; color: #ffffff; background-color: #c90000;">↑</button>
+    </div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="market-sidebar21" class="sidebar">
+    <img src="Products/21.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Супермаркет «Пятерочка»</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Братеевская 35, корп.3,  стр. 3</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://5ka.ru/">https://5ka.ru/</a></div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="market-sidebar20" class="sidebar">
+    <img src="Products/20.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Супермаркет "Ашан"</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход, расположен в "ТЦ Парк Хаус Братеево"</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">Бесединское шоссе, вл. 15</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://www.auchan.ru/">https://www.auchan.ru/</a></div>
+    <img src="Prom/4.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Магазин электроники "М Видео"</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход, расположен в ТЦ "Парк Хаус"</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">Бесединское шоссе, 15</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://www.mvideo.ru/">https://www.mvideo.ru/</a></div>
+    <div style="position: absolute; top: 260px; left: 273px; z-index: 999;">
+        <button class="scroll-button" type="button" style="position: fixed; width: 40px; height: 40px; border-radius: 0px 0px 15px 15px; background-color: #f2f2f2; border: none; outline: none; text-align: center; font-size: 20px; color: #ffffff; background-color: #c90000;">↓</button>
+    </div>
+    <div style="position: absolute; top: 225px; left: 273px; z-index: 999;">
+        <button class="scroll-button2" type="button" style="position: fixed; width: 40px; height: 40px; border-radius: 15px 15px 0px 0px; background-color: #f2f2f2; border: none; outline: none; text-align: center; font-size: 20px; color: #ffffff; background-color: #c90000;">↑</button>
+    </div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="market-sidebar18" class="sidebar">
+    <img src="Products/18.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Супермаркет «Магнит»</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Борисовские Пруды, 34, корп.  3</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://magnit.ru/">https://magnit.ru/</a></div>
+    <img src="Products/10.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Супермаркет  «Авоська»</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Борисовские пруды 36, корп.1</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://avoska.ru/">https://avoska.ru/</a></div>
+    <div style="position: absolute; top: 260px; left: 273px; z-index: 999;">
+        <button class="scroll-button" type="button" style="position: fixed; width: 40px; height: 40px; border-radius: 0px 0px 15px 15px; background-color: #f2f2f2; border: none; outline: none; text-align: center; font-size: 20px; color: #ffffff; background-color: #c90000;">↓</button>
+    </div>
+    <div style="position: absolute; top: 225px; left: 273px; z-index: 999;">
+        <button class="scroll-button2" type="button" style="position: fixed; width: 40px; height: 40px; border-radius: 15px 15px 0px 0px; background-color: #f2f2f2; border: none; outline: none; text-align: center; font-size: 20px; color: #ffffff; background-color: #c90000;">↑</button>
+    </div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="market-sidebar17" class="sidebar">
+    <img src="Products/17.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Продуктовый гипермаркет «ГИПЕР ЛЕНТА»</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход, расположен в ТЦ "Браво", 1 этаж</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">Борисовские пруды,26, корп.2</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://lenta.com/">https://lenta.com/</a></div>
+    <img src="Products/17.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Магазин электроники "DNS"</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход, расположен в ТЦ "БраVo"</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Борисовские пруды 26, корп.2</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://www.dns-shop.ru/?utm_source=yandex.ru">https://www.dns-shop.ru/?utm_source=yandex.ru</a></div>
+    <div style="position: absolute; top: 260px; left: 273px; z-index: 999;">
+        <button class="scroll-button" type="button" style="position: fixed; width: 40px; height: 40px; border-radius: 0px 0px 15px 15px; background-color: #f2f2f2; border: none; outline: none; text-align: center; font-size: 20px; color: #ffffff; background-color: #c90000;">↓</button>
+    </div>
+    <div style="position: absolute; top: 225px; left: 273px; z-index: 999;">
+        <button class="scroll-button2" type="button" style="position: fixed; width: 40px; height: 40px; border-radius: 15px 15px 0px 0px; background-color: #f2f2f2; border: none; outline: none; text-align: center; font-size: 20px; color: #ffffff; background-color: #c90000;">↑</button>
+    </div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="market-sidebar16" class="sidebar">
+    <img src="Products/16.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Супермаркет «Перекресток»</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход, расположен ТРК "Ключевой"</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">Борисовские пруды,26, 1 этаж</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://www.perekrestok.ru/">https://www.perekrestok.ru/</a></div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="market-sidebar14" class="sidebar">
+    <img src="Products/14.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Московские ярмарки</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">Братеевская улица, 16</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://"></a></div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="market-sidebar13" class="sidebar">
+    <img src="Products/13.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Магазин продуктов Дом Вкуса </div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Ключевая 10, корп.1</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://domvkusa-tc.ru/">https://domvkusa-tc.ru/</a></div>
+    <img src="Prom/6.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Магазин косметики "Магнит косметик"</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Ключевая, 8</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://magnitcosmetic.ru/">https://magnitcosmetic.ru/</a></div>
+    <div style="position: absolute; top: 260px; left: 273px; z-index: 999;">
+        <button class="scroll-button" type="button" style="position: fixed; width: 40px; height: 40px; border-radius: 0px 0px 15px 15px; background-color: #f2f2f2; border: none; outline: none; text-align: center; font-size: 20px; color: #ffffff; background-color: #c90000;">↓</button>
+    </div>
+    <div style="position: absolute; top: 225px; left: 273px; z-index: 999;">
+        <button class="scroll-button2" type="button" style="position: fixed; width: 40px; height: 40px; border-radius: 15px 15px 0px 0px; background-color: #f2f2f2; border: none; outline: none; text-align: center; font-size: 20px; color: #ffffff; background-color: #c90000;">↑</button>
+    </div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="market-sidebar12" class="sidebar">
+    <img src="Products/11.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Супермаркет «Пятерочка»</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход, расположен в ТЦ "Братеевский" 1 этаж</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">Ключевая ул., 6, корп.1</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://5ka.ru/">https://5ka.ru/</a></div>
+    <img src="Products/11.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Магазин обуви "KARI гипер"</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход, расположен в ТЦ "Братеевский"</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">Ключевая ул., 6, корп.1</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://kari.com/">https://kari.com/</a></div>
+    <img src="Products/11.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Магазин продуктов  «Вкус Вилл»</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход, расположен в ТЦ "Братеевский" 1 этаж</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">Ключевая ул., 6, корп. 1</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://vkusvill.ru/">https://vkusvill.ru/</a></div>
+    <div style="position: absolute; top: 260px; left: 273px; z-index: 999;">
+        <button class="scroll-button" type="button" style="position: fixed; width: 40px; height: 40px; border-radius: 0px 0px 15px 15px; background-color: #f2f2f2; border: none; outline: none; text-align: center; font-size: 20px; color: #ffffff; background-color: #c90000;">↓</button>
+    </div>
+    <div style="position: absolute; top: 225px; left: 273px; z-index: 999;">
+        <button class="scroll-button2" type="button" style="position: fixed; width: 40px; height: 40px; border-radius: 15px 15px 0px 0px; background-color: #f2f2f2; border: none; outline: none; text-align: center; font-size: 20px; color: #ffffff; background-color: #c90000;">↑</button>
+    </div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="market-sidebar9" class="sidebar">
+    <img src="Products/9.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Супермаркет «Пятерочка»</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">Братеевская улица, 25</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://5ka.ru/">https://5ka.ru/</a></div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="market-sidebar8" class="sidebar">
+    <img src="Products/8.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Супермаркет «Магнит»</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Борисовские Пруды, 18, корп. 3</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://magnit.ru/">https://magnit.ru/</a></div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="market-sidebar7" class="sidebar">
+    <img src="Products/7.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Супермаркет «Виктория»</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Братеевская 16, корп. 1</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://www.victoria-group.ru/">https://www.victoria-group.ru/</a></div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="market-sidebar5" class="sidebar">
+    <img src="Products/5.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Супермаркет «Перекресток»</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Борисовские пруды, 10</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://www.perekrestok.ru/">https://www.perekrestok.ru/</a></div>
+    <img src="Products/6.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Супермаркет «Дикси»</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Борисовские пруды, 10</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://dixy.ru/">https://dixy.ru/</a></div>
+    <div style="position: absolute; top: 260px; left: 273px; z-index: 999;">
+        <button class="scroll-button" type="button" style="position: fixed; width: 40px; height: 40px; border-radius: 0px 0px 15px 15px; background-color: #f2f2f2; border: none; outline: none; text-align: center; font-size: 20px; color: #ffffff; background-color: #c90000;">↓</button>
+    </div>
+    <div style="position: absolute; top: 225px; left: 273px; z-index: 999;">
+        <button class="scroll-button2" type="button" style="position: fixed; width: 40px; height: 40px; border-radius: 15px 15px 0px 0px; background-color: #f2f2f2; border: none; outline: none; text-align: center; font-size: 20px; color: #ffffff; background-color: #c90000;">↑</button>
+    </div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="market-sidebar4" class="sidebar">
+    <img src="Products/4.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Супермаркет «Пятерочка»</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap"> ул. Борисовские пруды, 8А</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://5ka.ru/">https://5ka.ru/</a></div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="market-sidebar3" class="sidebar">
+    <img src="Products/3.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Супермаркет «Авоська»</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Борисовские пруды, 14, корп. 4</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://avoska.ru/">https://avoska.ru/</a></div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="market-sidebar2" class="sidebar">
+    <img src="Products/2.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Супермаркет «СУПЕР - ЛЕНТА»</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Борисовские пруды, 14, корп.5</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://newsuper.lenta.com/">https://newsuper.lenta.com/</a></div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="market-sidebar1" class="sidebar">
+    <img src="Products/1.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Магазин продуктов «Вкус Вилл»</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Борисовские пруды 12, корп.1</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://vkusvill.ru/">https://vkusvill.ru/</a></div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="medicine-sidebar17" class="sidebar">
+    <img src="Medicine/17.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Центр речи Ларисы Андрахановой - логопеды</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Борисовские пруды, 6, корп.2</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://andrahanova.ru/">https://andrahanova.ru/</a></div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="medicine-sidebar16" class="sidebar">
+    <img src="Medicine/16.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Центр семейной стоматологии</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Братеевская, 21, корп. 1</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://dkplus.ru/">https://dkplus.ru/</a></div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="medicine-sidebar15" class="sidebar">
+    <img src="Medicine/15.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Аптека</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Борисовские пруды14, корп. 4</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://"></a></div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="medicine-sidebar14" class="sidebar">
+    <img src="Medicine/14.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Аптека</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Паромная, 9, корп. 1</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://"></a></div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="medicine-sidebar13" class="sidebar">
+    <img src="Products/16.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Аптека Столичка</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход, ТЦ "Ключевой"</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Борисовские пруды, 26</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://stolichki.ru/">https://stolichki.ru/</a></div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="medicine-sidebar12" class="sidebar">
+    <img src="Medicine/12.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Медицинская лаборатория KDL</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Кнопка вызова персонала</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Братеевская 10, корп.1</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://kdl.ru/">https://kdl.ru/</a></div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="medicine-sidebar11" class="sidebar">
+    <img src="Medicine/11.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Медицинская лаборатория Инвитро</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Ключевая,  18</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://www.invitro.ru/">https://www.invitro.ru/</a></div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="medicine-sidebar10" class="sidebar">
+    <img src="Medicine/10.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Аптека Горздрав</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход, расположена в ТЦ "БраVo"</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Борисовские пруды, 26, корп.2, 1 этаж</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://gorzdrav.org/">https://gorzdrav.org/</a></div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="medicine-sidebar9" class="sidebar">
+    <img src="Medicine/9.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">МосАптека</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход, расположена в ТЦ</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Ключевая 10, корп. 1, 1 этаж</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://superapteka.ru/">https://superapteka.ru/</a></div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="medicine-sidebar8" class="sidebar">
+    <img src="Medicine/8.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Аптека Горздрав</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Борисовские пруды, 14, корп. 5</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://gorzdrav.org/">https://gorzdrav.org/</a></div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="medicine-sidebar7" class="sidebar">
+    <img src="Medicine/7.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Детская городская поликлиника №145 филиал 2</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">Ореховый бульвар, д. 49, корп. 1</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://dgp145.mos.ru/">https://dgp145.mos.ru/</a></div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="medicine-sidebar6" class="sidebar">
+    <img src="Medicine/6.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Детская городская поликлиника №145 филиал 1</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Алма-Атинская, д.6, корп.1</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://dgp145.mos.ru/">https://dgp145.mos.ru/</a></div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="medicine-sidebar5" class="sidebar">
+    <img src="Medicine/5.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Детская городская поликлиника №145</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Борисовские Пруды, д.10, корп.3</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://dgp145.mos.ru/">https://dgp145.mos.ru/</a></div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="medicine-sidebar3" class="sidebar">
+    <img src="Medicine/3.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Городская поликлиника № 210 филиал 2</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Алма-Атинская, д.3, корп.3</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://http://gp210.mos.ru/">http://gp210.mos.ru/</a></div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="medicine-sidebar2" class="sidebar">
+    <img src="Medicine/2.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Городская поликлиника № 210 филиал 1</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Борисовские Пруды, д.12, корп.4</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://http://gp210.mos.ru/">http://gp210.mos.ru/</a></div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="medicine-sidebar1" class="sidebar">
+    <img src="Medicine/1.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Городская поликлиника № 210</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">Каширское шоссе, д. 57, корп. 1</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://http://gp210.mos.ru/">http://gp210.mos.ru/</a></div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="admin-sidebar12" class="sidebar">
+    <img src="Administration/12.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">ГБУ ТЦСО «Орехово» - социальное обсуживание</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Борисовские пруды 42</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://http://tcso-orehovo.ru/struktura/struktura-filiala-brateevo/">http://tcso-orehovo.ru/struktura/struktura-filiala-brateevo/</a></div>
+    <img src="Administration/12.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">ГБУ ТЦСО «Орехово» - социальная реабилитация</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Борисовские пруды 42</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://http://tcso-orehovo.ru/struktura/struktura-filiala-brateevo/">http://tcso-orehovo.ru/struktura/struktura-filiala-brateevo/</a></div>
+    <div style="position: absolute; top: 260px; left: 273px; z-index: 999;">
+        <button class="scroll-button" type="button" style="position: fixed; width: 40px; height: 40px; border-radius: 0px 0px 15px 15px; background-color: #f2f2f2; border: none; outline: none; text-align: center; font-size: 20px; color: #ffffff; background-color: #c90000;">↓</button>
+    </div>
+    <div style="position: absolute; top: 225px; left: 273px; z-index: 999;">
+        <button class="scroll-button2" type="button" style="position: fixed; width: 40px; height: 40px; border-radius: 15px 15px 0px 0px; background-color: #f2f2f2; border: none; outline: none; text-align: center; font-size: 20px; color: #ffffff; background-color: #c90000;">↑</button>
+    </div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="admin-sidebar11" class="sidebar">
+    <img src="Administration/11.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">ГБУ "Жилищник" района Братеево</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Ключевая, 22, корп. 2</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://gbu-brateevo.ru/">https://gbu-brateevo.ru/</a></div>
+    <img src="Administration/10.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Управление социальной защиты </div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Ключевая 22, корп.1</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://dszn.ru/department/subordinate/1031">https://dszn.ru/department/subordinate/1031</a></div>
+
+    <div style="position: absolute; top: 260px; left: 273px; z-index: 999;">
+        <button class="scroll-button" type="button" style="position: fixed; width: 40px; height: 40px; border-radius: 0px 0px 15px 15px; background-color: #f2f2f2; border: none; outline: none; text-align: center; font-size: 20px; color: #ffffff; background-color: #c90000;">↓</button>
+    </div>
+    <div style="position: absolute; top: 225px; left: 273px; z-index: 999;">
+        <button class="scroll-button2" type="button" style="position: fixed; width: 40px; height: 40px; border-radius: 15px 15px 0px 0px; background-color: #f2f2f2; border: none; outline: none; text-align: center; font-size: 20px; color: #ffffff; background-color: #c90000;">↑</button>
+    </div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="admin-sidebar9" class="sidebar">
+    <img src="Administration/9.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">ТЦ СО Орехово-социальная реабилитация</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Ключевая 12, корп.1</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://http://tcso-orehovo.ru/">http://tcso-orehovo.ru/</a></div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="prom-sidebar8" class="sidebar">
+    <img src="Administration/8.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Правление общества инвалидов</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Борисовские пруды 34, корп.2</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://brateevo.mos.ru/">https://brateevo.mos.ru/</a></div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="prom-sidebar7" class="sidebar">
+    <img src="Administration/7.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Правление Совета Ветеранов ВОВ</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Борисовские пруды 22, корп. 1</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://veteran-uao.moscow/">https://veteran-uao.moscow/</a></div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="admin-sidebar5" class="sidebar">
+    <img src="Administration/5.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">ГБУ ТЦСО «Орехово» филиал «Братеево» - соц.обслуживание</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Борисовские пруды 8, корп.3</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://http://tcso-orehovo.ru/contacts/gbu-ttsso-orehovo-filial-brateevo/">http://tcso-orehovo.ru/contacts/gbu-ttsso-orehovo-filial-brateevo/</a></div>
+    <img src="Administration/4.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Центр московского долголетия «Борисовские пруды» (ЮАО)</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Борисовские Пруды, 8, корп.3</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://dszn.ru/department/subordinate/2203">https://dszn.ru/department/subordinate/2203</a></div>
+    <div style="position: absolute; top: 260px; left: 273px; z-index: 999;">
+        <button class="scroll-button" type="button" style="position: fixed; width: 40px; height: 40px; border-radius: 0px 0px 15px 15px; background-color: #f2f2f2; border: none; outline: none; text-align: center; font-size: 20px; color: #ffffff; background-color: #c90000;">↓</button>
+    </div>
+    <div style="position: absolute; top: 225px; left: 273px; z-index: 999;">
+        <button class="scroll-button2" type="button" style="position: fixed; width: 40px; height: 40px; border-radius: 15px 15px 0px 0px; background-color: #f2f2f2; border: none; outline: none; text-align: center; font-size: 20px; color: #ffffff; background-color: #c90000;">↑</button>
+    </div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="admin-sidebar2" class="sidebar">
+    <img src="Administration/2.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">МФЦ - Центр госуслуг района Братеево </div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Борисовские Пруды 18, корп. 3</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://md.mos.ru">md.mos.ru</a></div>
+    <img src="Administration/6.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Управление миграции</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Борисовские Пруды 18, корп.3</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://77.xn--b1aew.xn--p1ai/">https://77.xn--b1aew.xn--p1ai/</a></div>
+    <div style="position: absolute; top: 260px; left: 273px; z-index: 999;">
+        <button class="scroll-button" type="button" style="position: fixed; width: 40px; height: 40px; border-radius: 0px 0px 15px 15px; background-color: #f2f2f2; border: none; outline: none; text-align: center; font-size: 20px; color: #ffffff; background-color: #c90000;">↓</button>
+    </div>
+    <div style="position: absolute; top: 225px; left: 273px; z-index: 999;">
+        <button class="scroll-button2" type="button" style="position: fixed; width: 40px; height: 40px; border-radius: 15px 15px 0px 0px; background-color: #f2f2f2; border: none; outline: none; text-align: center; font-size: 20px; color: #ffffff; background-color: #c90000;">↑</button>
+    </div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<div id="admin-sidebar1" class="sidebar">
+    <img src="Administration/1.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Управа района Братеево</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Адаптированный вход</div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Алма-Атинская 10, корп. 3</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://brateevo.mos.ru">brateevo.mos.ru</a></div>
+    <img src="Administration/3.webp" alt="Brateevo">
+    <div id="brateevo-text" class="textbox bold">Центр московского долголетия «Братеево» (ЮАО)</div>
+    <div class="textbox bold" style="color: #c90000;">ДОСТУПНОСТЬ</div>
+    <div class="textbox small-gap">Парковка без специальных мест; вызов сотрудника у лестницы внутри объекта. </div>
+    <div class="textbox bold" style="color: #c90000;">АДРЕС</div>
+    <div class="textbox small-gap">ул. Алма-Атинская 10, корп.3</div>
+    <div class="textbox bold" style="color: #c90000;">САЙТ</div>
+    <div class="textbox small-gap"><a href="https://https://dszn.ru/department/subordinate/2202">https://dszn.ru/department/subordinate/2202</a></div>
+    <div style="position: absolute; top: 260px; left: 273px; z-index: 999;">
+        <button class="scroll-button" type="button" style="position: fixed; width: 40px; height: 40px; border-radius: 0px 0px 15px 15px; background-color: #f2f2f2; border: none; outline: none; text-align: center; font-size: 20px; color: #ffffff; background-color: #c90000;">↓</button>
+    </div>
+    <div style="position: absolute; top: 225px; left: 273px; z-index: 999;">
+        <button class="scroll-button2" type="button" style="position: fixed; width: 40px; height: 40px; border-radius: 15px 15px 0px 0px; background-color: #f2f2f2; border: none; outline: none; text-align: center; font-size: 20px; color: #ffffff; background-color: #c90000;">↑</button>
+    </div>
+    <button class="hide-sidebar-btn" style="font-size: 20px; color: #ffffff; position: absolute; top: 0%; left: 85%; z-index: 999; outline: none; background-color: #c90000; border: none; border-radius: 0px 15px; padding: 5px; cursor: pointer; width: 48px; height: 30px;">×</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
